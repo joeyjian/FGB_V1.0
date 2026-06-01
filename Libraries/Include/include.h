@@ -34,7 +34,7 @@
 #define FOGIC_SYSCLK          		(32000000UL)
 #define FOGIC_URT_BAUD        		(115200UL)
 
-#define FOGIC_KYACTV_LOGIC			0		// 0 = �����͵�ƽ��Ч
+#define FOGIC_KYACTV_LOGIC			0		// 0 = 按键低电平有效
 	 
 #define FOGIC_PAYLOAD_LEN_MAX     	16      // tx/rx maximum length of payload
 #define FOGIC_PAYLOAD_LEN_END     	(FOGIC_PAYLOAD_LEN_MAX - 1)
@@ -56,22 +56,22 @@ typedef enum
 } FOGIC_KEYFUNC_E;
 
 // ============================================================================ //
-// ����ģʽ
-#define FOGIC_PROG_RXD				0		// ����ģʽ  -- ͷ��
-#define FOGIC_PROG_TXD				1		// ����ģʽ  -- ң����
+// 程序模式
+#define FOGIC_PROG_RXD				0		// 接收模式  -- 头盔
+#define FOGIC_PROG_TXD				1		// 发送模式  -- 遥控器
 #define	FOGIC_PROG_TYP				FOGIC_PROG_TXD	// FOGIC_PROG_RXD
 
 // ---------------------------------------------------------------------------- //
-// ң����
+// 遥控器
 #if( FOGIC_PROG_TYP == FOGIC_PROG_TXD )
-	#define	FOGIC_AUTOSLEEP_DLYT		1000	// 1S ���޲������Զ�����
-	#define	FOGIC_REMOTE_COMTEST		0		// 1 = ���ò���ң������0 ����ң����
+	#define	FOGIC_AUTOSLEEP_DLYT		1000	// 1S 后，无操作，自动休眠
+	#define	FOGIC_REMOTE_COMTEST		0		// 1 = 公用测试遥控器，0 正常遥控器
 	
 	#include "Fogic_COM.h"
 	#include "Fogic_TxD.h"
 	
 // ---------------------------------------------------------------------------- //
-// ͷ��
+// 头盔
 #else
 	#define	FOGIC_LED_ONS				1
 	#define	FOGIC_LED_OFF				0

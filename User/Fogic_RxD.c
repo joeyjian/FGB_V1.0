@@ -192,7 +192,7 @@ static void Fogic_RxLed_Show( void )
 }
 
 // ============================================================================ //
-// TMR0 ◊ˆ 1mS SysTick
+// TMR0 ÂÅö 1mS SysTick
 void Fogic_SysTick_Init( void )
 {
     // Config 1ms 
