@@ -1,0 +1,1 @@
+"..\..\User\main.c" BROWSE INTVECTOR(0x8000) INCDIR(..\..\Libraries\Include;..\..\User) interval(3) DEBUG OBJECTEXTEND PRINT(.\Release\Listings\main.lst) TABS (2) OBJECT(.\Release\Objects\main.obj)

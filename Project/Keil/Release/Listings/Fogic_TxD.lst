@@ -1,0 +1,473 @@
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE FOGIC_TXD
+OBJECT MODULE PLACED IN .\Release\Objects\Fogic_TxD.obj
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE ..\..\User\Fogic_TxD.c BROWSE INTVECTOR(0X8000) INCDIR(..\..\Libraries\Incl
+                    -ude;..\..\User) INTERVAL(3) DEBUG OBJECTEXTEND PRINT(.\Release\Listings\Fogic_TxD.lst) TABS(2) OBJECT(.\Release\Objects\
+                    -Fogic_TxD.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    Fogic_TxD.c
+   4            * @brief   按键切换8种LED模式，每次按键：立即发RF -> 显示5s -> 休眠
+   5            *
+   6            * 按键每按一次，模式依次循环（0->1->...->10->0）：
+   7            *   模式0:  常亮-红
+   8            *   模式1:  常亮-橙
+   9            *   模式2:  常亮-黄
+  10            *   模式3:  常亮-绿
+  11            *   模式4:  常亮-青
+  12            *   模式5:  常亮-蓝
+  13            *   模式6:  常亮-紫
+  14            *   模式7:  常亮-品红
+  15            *   模式8:  白色呼吸     亮度0->满->0，循环
+  16            *   模式9:  彩色呼吸     每种颜色各完整呼吸一次
+  17            *   模式10: 全彩渐变     红->橙->黄->绿->青->蓝->紫->红 平滑过渡
+  18            *
+  19            * 显示期间再次按键：立即重新发RF，切换到下一模式并重新计5s
+  20            *
+  21            * 硬件：
+  22            *   KEY3  P15 --- VCC   按下=高电平，内部下拉
+  23            *   LED共阴，高电平点亮：LED_R=P05 / LED_G=P01 / LED_B=P06
+  24            *
+  25            * 软件PWM：每帧10ms（10片×1ms），分辨率0~10
+  26            ******************************************************************************
+  27            */
+  28          
+  29          #ifndef __FOGIC_TXD_C__
+  30          #define __FOGIC_TXD_C__
+  31          
+  32          #include "include.h"
+  33          #if( FOGIC_PROG_TYP == FOGIC_PROG_TXD )
+  34          
+  35          /* ============================================================================
+  36             PWM参数
+  37             ============================================================================ */
+  38          #define PWM_MAX     10          /* PWM最大亮度，每帧10ms */
+  39          #define PWM_STEP_MS 1           /* 每时间片1ms            */
+  40          
+  41          /* 5秒 = 5000ms / 10ms每帧 = 500帧 */
+  42          #define SHOW_FRAMES 500
+  43          
+  44          /* ============================================================================
+  45             LED控制宏（共阳低有效，与原始完全一致）
+  46             ============================================================================ */
+  47          #define SET_R(on)     do{ P05 = (on) ? 1 : 0; }while(0)   /* R -> P05, 共阴高有效 */
+  48          #define SET_G(on)     do{ P01 = (on) ? 1 : 0; }while(0)   /* G -> P01, 共阴高有效 */
+  49          #define SET_B(on)     do{ P06 = (on) ? 1 : 0; }while(0)   /* B -> P06, 共阴高有效 */
+  50          #define LED_ALL_OFF() do{ P05=0; P01=0; P06=0; }while(0)
+  51          
+  52          /* ============================================================================
+  53             全局变量（与原始完全一致）
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 2   
+
+  54             ============================================================================ */
+  55          u8  RFM_Buf[ FOGIC_PAYLOAD_LEN_MAX ];
+  56          
+  57          u8  P0_MD0_Reg, P0_MD1_Reg;
+  58          u8  P1_MD0_Reg, P1_MD1_Reg;
+  59          u8  P0_AF0_Reg, P0_AF1_Reg;
+  60          u8  P1_AF0_Reg, P1_AF1_Reg;
+  61          u8  P0_PU_Reg,  P1_PU_Reg;
+  62          
+  63          /* 当前模式索引 0~7，跨休眠保持 */
+  64          static u8 g_mode = 0;
+  65          
+  66          /* 按键中断标志（在pwm_frame内置位） */
+  67          static u8 g_rekey = 0;
+  68          
+  69          /* ============================================================================
+  70             RF相关前向声明
+  71             ============================================================================ */
+  72          static void Fogic_RF_Send( u8 key_func );
+  73          
+  74          /* ============================================================================
+  75             渲染一帧（软件PWM，10ms）
+  76             同时检测按键：若P15持续按下超过消抖时间则置g_rekey
+  77             ============================================================================ */
+  78          static void pwm_frame( u8 r, u8 g, u8 b )
+  79          {
+  80   1          u8 t;
+  81   1          for( t = 0; t < PWM_MAX; t++ )
+  82   1          {
+  83   2              SET_R( t < r );
+  84   2              SET_G( t < g );
+  85   2              SET_B( t < b );
+  86   2              delay_ms( PWM_STEP_MS );
+  87   2      
+  88   2              if( P15 == 1 )
+  89   2              {
+  90   3                  /* 消抖：持续检测80ms，全部为高电平才确认 */
+  91   3                  u8 d;
+  92   3                  for( d = 0; d < 80; d++ )
+  93   3                  {
+  94   4                      delay_ms( 1 );
+  95   4                      if( P15 == 0 ) return;  /* 中途松开，判为抖动，忽略 */
+  96   4                  }
+  97   3                  /* 确认为有效按键：等待松开后再响应 */
+  98   3                  while( P15 == 1 ) { delay_ms( 5 ); }
+  99   3                  delay_ms( 50 );             /* 松手后再等50ms防弹跳     */
+ 100   3                  LED_ALL_OFF();
+ 101   3                  g_rekey = 1;
+ 102   3                  return;
+ 103   3              }
+ 104   2          }
+ 105   1      }
+ 106          
+ 107          /* ============================================================================
+ 108             线性插值辅助（避免重复代码）
+ 109             从 a 渐变到 b，当前步 i，总步数 steps
+ 110             ============================================================================ */
+ 111          static u8 lerp( u8 a, u8 b, u8 i, u8 steps )
+ 112          {
+ 113   1          if( b >= a ) return (u8)( a + (u16)(b - a) * i / steps );
+ 114   1          else         return (u8)( a - (u16)(a - b) * i / steps );
+ 115   1      }
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 3   
+
+ 116          
+ 117          /* ============================================================================
+ 118             渐变一段：从(r0,g0,b0)到(r1,g1,b1)，共steps帧
+ 119             返回实际执行的帧数（被按键中断则提前返回）
+ 120             ============================================================================ */
+ 121          static u8 do_fade( u8 r0, u8 g0, u8 b0,
+ 122                             u8 r1, u8 g1, u8 b1,
+ 123                             u8 steps )
+ 124          {
+ 125   1          u8 i;
+ 126   1          for( i = 0; i < steps; i++ )
+ 127   1          {
+ 128   2              if( g_rekey ) return i;
+ 129   2              pwm_frame( lerp(r0,r1,i,steps),
+ 130   2                         lerp(g0,g1,i,steps),
+ 131   2                         lerp(b0,b1,i,steps) );
+ 132   2          }
+ 133   1          return steps;
+ 134   1      }
+ 135          
+ 136          /* ============================================================================
+ 137             8种颜色定义（R,G,B，亮度0~10）
+ 138             ============================================================================ */
+ 139          /* 七彩8色表 */
+ 140          static const u8 code COLORS[8][3] = {
+ 141              {10, 0, 0},   /* 0 红   */
+ 142              {10, 4, 0},   /* 1 橙   */
+ 143              { 8, 8, 0},   /* 2 黄   */
+ 144              { 0,10, 0},   /* 3 绿   */
+ 145              { 0, 8, 6},   /* 4 青   */
+ 146              { 0, 0,10},   /* 5 蓝   */
+ 147              { 5, 0,10},   /* 6 紫   */
+ 148              {10, 0, 5},   /* 7 品红 */
+ 149          };
+ 150          
+ 151          /* ============================================================================
+ 152             模式0~7：单色常亮（显示5秒）
+ 153             ci = COLORS表索引（0~7对应红/橙/黄/绿/青/蓝/紫/品红）
+ 154             ============================================================================ */
+ 155          static void mode_solid( u8 ci )
+ 156          {
+ 157   1          u16 total;
+ 158   1          for( total = 0; total < SHOW_FRAMES && !g_rekey; total++ )
+ 159   1          {
+ 160   2              pwm_frame( COLORS[ci][0], COLORS[ci][1], COLORS[ci][2] );
+ 161   2          }
+ 162   1      }
+ 163          
+ 164          /* ============================================================================
+ 165             模式8：白色呼吸（亮度0→满→0，每圈100帧=1s，5秒约5圈）
+ 166             ============================================================================ */
+ 167          static void mode_breath_white(void)
+ 168          {
+ 169   1          u16 total;
+ 170   1          u8 v, i;
+ 171   1          total = 0;
+ 172   1          while( total < SHOW_FRAMES && !g_rekey )
+ 173   1          {
+ 174   2              /* 上升50帧 */
+ 175   2              for( i = 0; i < 50 && total < SHOW_FRAMES && !g_rekey; i++, total++ )
+ 176   2              {
+ 177   3                  v = (u8)(i / 5);    /* 0~9 */
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 4   
+
+ 178   3                  pwm_frame(v, v, v);
+ 179   3              }
+ 180   2              /* 下降50帧 */
+ 181   2              for( i = 0; i < 50 && total < SHOW_FRAMES && !g_rekey; i++, total++ )
+ 182   2              {
+ 183   3                  v = (u8)((49 - i) / 5);
+ 184   3                  pwm_frame(v, v, v);
+ 185   3              }
+ 186   2          }
+ 187   1      }
+ 188          
+ 189          /* ============================================================================
+ 190             模式9：彩色呼吸（每种颜色各呼吸一次，每次100帧=1s）
+ 191             5秒 = 5种颜色各呼吸一次
+ 192             ============================================================================ */
+ 193          static void mode_breath_color(void)
+ 194          {
+ 195   1          u8 c, i, v;
+ 196   1          u16 total;
+ 197   1          total = 0;
+ 198   1          c = 0;
+ 199   1          while( total < SHOW_FRAMES && !g_rekey )
+ 200   1          {
+ 201   2              /* 上升50帧 */
+ 202   2              for( i = 0; i < 50 && total < SHOW_FRAMES && !g_rekey; i++, total++ )
+ 203   2              {
+ 204   3                  v = (u8)(i / 5);
+ 205   3                  pwm_frame(
+ 206   3                      (u8)((u16)COLORS[c][0] * v / 10),
+ 207   3                      (u8)((u16)COLORS[c][1] * v / 10),
+ 208   3                      (u8)((u16)COLORS[c][2] * v / 10)
+ 209   3                  );
+ 210   3              }
+ 211   2              /* 下降50帧 */
+ 212   2              for( i = 0; i < 50 && total < SHOW_FRAMES && !g_rekey; i++, total++ )
+ 213   2              {
+ 214   3                  v = (u8)((49 - i) / 5);
+ 215   3                  pwm_frame(
+ 216   3                      (u8)((u16)COLORS[c][0] * v / 10),
+ 217   3                      (u8)((u16)COLORS[c][1] * v / 10),
+ 218   3                      (u8)((u16)COLORS[c][2] * v / 10)
+ 219   3                  );
+ 220   3              }
+ 221   2              c = (c + 1) % 8;
+ 222   2          }
+ 223   1      }
+ 224          
+ 225          /* ============================================================================
+ 226             模式10：全彩渐变（8色顺序平滑过渡一整圈，每段约63帧，8段≈500帧）
+ 227             ============================================================================ */
+ 228          static void mode_rainbow_fade(void)
+ 229          {
+ 230   1          u8 c, nc;
+ 231   1          u16 total;
+ 232   1          total = 0;
+ 233   1          c = 0;
+ 234   1          while( total < SHOW_FRAMES && !g_rekey )
+ 235   1          {
+ 236   2              nc = (c + 1) % 8;
+ 237   2              total += do_fade(
+ 238   2                  COLORS[c][0],  COLORS[c][1],  COLORS[c][2],
+ 239   2                  COLORS[nc][0], COLORS[nc][1], COLORS[nc][2],
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 5   
+
+ 240   2                  63
+ 241   2              );
+ 242   2              c = nc;
+ 243   2          }
+ 244   1      }
+ 245          
+ 246          /* ============================================================================
+ 247             显示当前模式（5秒）
+ 248             ============================================================================ */
+ 249          static void LED_ShowMode(void)
+ 250          {
+ 251   1          switch( g_mode )
+ 252   1          {
+ 253   2              case  0: mode_solid(0);        break;  /* 常亮-红   */
+ 254   2              case  1: mode_solid(1);        break;  /* 常亮-橙   */
+ 255   2              case  2: mode_solid(2);        break;  /* 常亮-黄   */
+ 256   2              case  3: mode_solid(3);        break;  /* 常亮-绿   */
+ 257   2              case  4: mode_solid(4);        break;  /* 常亮-青   */
+ 258   2              case  5: mode_solid(5);        break;  /* 常亮-蓝   */
+ 259   2              case  6: mode_solid(6);        break;  /* 常亮-紫   */
+ 260   2              case  7: mode_solid(7);        break;  /* 常亮-品红 */
+ 261   2              case  8: mode_breath_white();  break;  /* 白色呼吸  */
+ 262   2              case  9: mode_breath_color();  break;  /* 彩色呼吸  */
+ 263   2              case 10: mode_rainbow_fade();  break;  /* 全彩渐变  */
+ 264   2              default: break;
+ 265   2          }
+ 266   1          LED_ALL_OFF();
+ 267   1      }
+ 268          
+ 269          /* ============================================================================
+ 270             RF初始化（与原始完全一致）
+ 271             ============================================================================ */
+ 272          static void Fogic_RFM_Init( void )
+ 273          {
+ 274   1          rf_init();
+ 275   1          rf_spi_write_byte( REG_BANK0_FEATURE,   0x10 );
+ 276   1          rf_spi_write_byte( REG_BANK0_EN_AA,     0x00 );
+ 277   1          rf_spi_write_byte( REG_BANK0_CONFIG,    0xFA );
+ 278   1          rf_spi_write_byte( REG_BANK0_RX_PW_P0, FOGIC_RF_PWP0 );
+ 279   1          rf_spi_write_byte( REG_BANK0_RF_CH,     FOGIC_RF_CHANNEL );
+ 280   1          rf_spi_write_byte( REG_BANK0_EN_RXADDR, 0x03 );
+ 281   1          rf_flush_tx();
+ 282   1          rf_flush_rx();
+ 283   1          rf_clear_all_irq();
+ 284   1          rf_ce_low();
+ 285   1      }
+ 286          
+ 287          static void Fogic_RFM_BufInit( void )
+ 288          {
+ 289   1          u8 i;
+ 290   1          RFM_Buf[0] = 'F';
+ 291   1          RFM_Buf[1] = 0;
+ 292   1          for( i = 2; i < 14; i++ ) RFM_Buf[i] = 0x00;
+ 293   1          RFM_Buf[14] = KEY_NO_FUNC;
+ 294   1          RFM_Buf[15] = 0x00;
+ 295   1      }
+ 296          
+ 297          static void Fogic_RF_Send( u8 key_func )
+ 298          {
+ 299   1          u8 i;
+ 300   1          RFM_Buf[1]++;
+ 301   1          RFM_Buf[14] = key_func | 0x10;
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 6   
+
+ 302   1          RFM_Buf[15] = Fogic_GetCRC( RFM_Buf, FOGIC_PAYLOAD_LEN_END );
+ 303   1      
+ 304   1          for( i = 0; i < FOGIC_RESEND_CNTS_MAX; i++ )
+ 305   1          {
+ 306   2              rf_flush_tx();
+ 307   2              rf_clear_all_irq();
+ 308   2              rf_send_pack( CMD_W_TX_PAYLOAD, RFM_Buf, FOGIC_PAYLOAD_LEN_MAX );
+ 309   2              rf_ce_high();
+ 310   2              delay_ms( 2 );
+ 311   2              rf_ce_low();
+ 312   2              rf_flush_tx();
+ 313   2              rf_clear_all_irq();
+ 314   2              delay_ms( 2 );
+ 315   2          }
+ 316   1      }
+ 317          
+ 318          /* ============================================================================
+ 319             GPIO初始化（与原始完全一致）
+ 320             ============================================================================ */
+ 321          static void GPIO_Init( void )
+ 322          {
+ 323   1          P0_MD0 &= ~0x0C;
+ 324   1          P0_MD0 |=  0x04;
+ 325   1      
+ 326   1          P0_MD1 &= ~0x3C;
+ 327   1          P0_MD1 |=  0x14;
+ 328   1      
+ 329   1          P1_MD0 &= ~0xC0;
+ 330   1          P1_PU  &= ~0x20;
+ 331   1          P1_PD  |=  0x20;
+ 332   1      
+ 333   1          LED_ALL_OFF();
+ 334   1      
+ 335   1          P0_MD0_Reg = P0_MD0; P0_MD1_Reg = P0_MD1;
+ 336   1          P1_MD0_Reg = P1_MD0; P1_MD1_Reg = P1_MD1;
+ 337   1          P0_PU_Reg  = P0_PU;  P1_PU_Reg  = P1_PU;
+ 338   1          P0_AF0_Reg = P0_AF0; P0_AF1_Reg = P0_AF1;
+ 339   1          P1_AF0_Reg = P1_AF0; P1_AF1_Reg = P1_AF1;
+ 340   1      }
+ 341          
+ 342          /* ============================================================================
+ 343             进入SLEEP（与原始完全一致）
+ 344             ============================================================================ */
+ 345          static void Enter_Sleep( void )
+ 346          {
+ 347   1          LED_ALL_OFF();
+ 348   1      
+ 349   1          rf_spi_write_byte( REG_BANK0_FEATURE, 0x20 );
+ 350   1          rf_spi_write_byte( REG_BANK0_PMU_CTL, 0xA9 );
+ 351   1          delay_ms( 2 );
+ 352   1      
+ 353   1          P0_MD0 = 0xFF; P0_MD1 = 0xFF;
+ 354   1          P1_MD0 = 0xFF; P1_MD1 = 0xFF;
+ 355   1      
+ 356   1          P1_MD1 &= ~0x0C;
+ 357   1          P1_MD1 |=  0x08;
+ 358   1          P1_AF1 |=  0x0C;
+ 359   1          P1_PD  |=  0x20;
+ 360   1      
+ 361   1          WKPND     = 0xFF;
+ 362   1          WKUP_CON0 = 0x02;
+ 363   1          LP_CON   |= 0x40;
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 7   
+
+ 364   1      
+ 365   1          __ENTER_SLEEP_MODE;
+ 366   1      
+ 367   1          /* ===== 唤醒后继续 ===== */
+ 368   1          __SLEEP_AFTER_WAKE_UP;
+ 369   1      
+ 370   1          P0_MD0 = P0_MD0_Reg; P0_MD1 = P0_MD1_Reg;
+ 371   1          P1_MD0 = P1_MD0_Reg; P1_MD1 = P1_MD1_Reg;
+ 372   1          P0_PU  = P0_PU_Reg;  P1_PU  = P1_PU_Reg;
+ 373   1          P0_AF0 = P0_AF0_Reg; P0_AF1 = P0_AF1_Reg;
+ 374   1          P1_AF0 = P1_AF0_Reg; P1_AF1 = P1_AF1_Reg;
+ 375   1      
+ 376   1          rf_spi_init();
+ 377   1          Fogic_RFM_Init();
+ 378   1      
+ 379   1          /* 唤醒后消抖：等待按键稳定高电平100ms才算有效 */
+ 380   1          delay_ms( 50 );
+ 381   1          {
+ 382   2              u8 d;
+ 383   2              for( d = 0; d < 100; d++ )
+ 384   2              {
+ 385   3                  delay_ms( 1 );
+ 386   3                  if( P15 == 0 ) { Enter_Sleep(); return; } /* 抖动，重新休眠 */
+*** WARNING C265 IN LINE 386 OF ..\..\User\Fogic_TxD.c: 'Enter_Sleep': recursive call to non-reentrant function
+ 387   3              }
+ 388   2          }
+ 389   1          /* 等待按键完全松开 */
+ 390   1          while( P15 == 1 ) { delay_ms( 5 ); }
+ 391   1          delay_ms( 80 );                 /* 松手后再等80ms防弹跳 */
+ 392   1      }
+ 393          
+ 394          /* ============================================================================
+ 395             主函数
+ 396             流程：
+ 397               上电 -> 休眠
+ 398               唤醒（按键）->  g_mode切换 -> 立即发RF -> 显示5s -> 休眠
+ 399               显示中再次按键 -> 立即切换到下一模式 -> 重新发RF -> 重新计5s
+ 400             ============================================================================ */
+ 401          void main( void )
+ 402          {
+ 403   1          system_init();
+ 404   1          rf_spi_init();
+ 405   1      
+ 406   1          GPIO_Init();
+ 407   1          Fogic_RFM_Init();
+ 408   1          Fogic_RFM_BufInit();
+ 409   1          LED_ALL_OFF();
+ 410   1      
+ 411   1          Enter_Sleep();              /* 上电休眠，等待首次按键 */
+ 412   1      
+ 413   1          while( 1 )
+ 414   1          {
+ 415   2              g_rekey = 0;                        /* 清中断标志           */
+ 416   2              g_mode  = (g_mode + 1) % 11;       /* 切换到下一模式（0~10循环）*/
+ 417   2              Fogic_RF_Send( KFN_GO_STOP );       /* 立即发送RF           */
+ 418   2              LED_ShowMode();                     /* 显示当前模式5秒      */
+ 419   2      
+ 420   2              if( g_rekey )
+ 421   2              {
+ 422   3                  /* 显示期间被按键中断：不休眠，直接切换下一模式 */
+ 423   3                  continue;
+ 424   3              }
+C51 COMPILER V9.52.0.0   FOGIC_TXD                                                         05/24/2026 16:55:24 PAGE 8   
+
+ 425   2      
+ 426   2              /* 5秒正常显示完毕，进入休眠 */
+ 427   2              Enter_Sleep();
+ 428   2          }
+ 429   1      }
+ 430          
+ 431          /* ============================================================================ */
+ 432          #endif
+ 433          #endif /* __FOGIC_TXD_C__ */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1661    ----
+   CONSTANT SIZE    =     24    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     28      34
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

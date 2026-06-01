@@ -1,0 +1,89 @@
+C51 COMPILER V9.52.0.0   FOGIC_COM                                                         05/24/2026 16:55:24 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE FOGIC_COM
+OBJECT MODULE PLACED IN .\Release\Objects\Fogic_COM.obj
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE ..\..\User\Fogic_COM.c BROWSE INTVECTOR(0X8000) INCDIR(..\..\Libraries\Incl
+                    -ude;..\..\User) INTERVAL(3) DEBUG OBJECTEXTEND PRINT(.\Release\Listings\Fogic_COM.lst) TABS(2) OBJECT(.\Release\Objects\
+                    -Fogic_COM.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    Fogic_Com.c
+   4            * @author  Fogic
+   5            * @version V1.0.0
+   6            * @date    2024-10-12
+   7            * @brief   Comm Func
+   8            ******************************************************************************
+   9            * @attention
+  10            */ 
+  11          
+  12          #ifndef __FOGIC_COM_C__
+  13          #define __FOGIC_COM_C__
+  14          
+  15          // ============================================================================ //
+  16          #include "include.h"
+  17          
+  18          // ============================================================================ //
+  19          // 参数定义
+  20          
+  21          // ============================================================================ //
+  22          u8 Fogic_GetCRC( u8 *Buf, u8 Cnt )
+  23          {
+  24   1        u8 CrcV = 0;
+  25   1        u8 i;
+  26   1        for( i = 0; i < Cnt; i++ )
+  27   1        {
+  28   2          CrcV ^= Buf[i];
+  29   2        }
+  30   1        return( ~CrcV );
+  31   1      }
+  32          
+  33          // ============================================================================ //
+  34          void Fogic_Uart_Init( void )
+  35          {
+  36   1          u32 BaudVal = (FOGIC_SYSCLK - FOGIC_URT_BAUD) / FOGIC_URT_BAUD;
+  37   1          
+  38   1          // UART0 IO : TX -- P13(AF3)
+  39   1          P1_MD0 &= ~0xC0;
+  40   1          P1_MD0 |=  0x80;
+  41   1          P1_AF0 |=  0xC0;
+  42   1          
+  43   1          while(!(UART0_STA & (1 << 4)));
+  44   1          
+  45   1          UART0_BAUD1 = (u8)( BaudVal >> 8 );
+  46   1          UART0_BAUD0 = (u8)( BaudVal >> 0 );
+  47   1          UART0_CON   = 0x10;
+  48   1      }
+  49          
+  50          void Fogic_Uart_TxString( u8 *Dat, u8 Cnt )
+  51          {
+  52   1        u8 i;
+  53   1        for( i = 0; i < Cnt; i++ )
+C51 COMPILER V9.52.0.0   FOGIC_COM                                                         05/24/2026 16:55:24 PAGE 2   
+
+  54   1        {
+  55   2          while( !(UART0_STA & (1 << 4)) );
+  56   2          UART0_DATA = Dat[i];
+  57   2          while( !(UART0_STA & (1 << 4)) );
+  58   2        }
+  59   1      }
+  60          
+  61          // ============================================================================ //
+  62          #endif
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    134    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
