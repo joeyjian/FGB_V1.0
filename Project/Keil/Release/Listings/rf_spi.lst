@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   RF_SPI                                                            05/24/2026 16:55:24 PAGE 1   
+C51 COMPILER V9.52.0.0   RF_SPI                                                            06/06/2026 21:26:43 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE RF_SPI
@@ -62,7 +62,7 @@ line level    source
   51   1          P0_MD0 |=  0x1;
   52   1          // pull up cs_n
   53   1          P0_PU |= (1 << 0);
-C51 COMPILER V9.52.0.0   RF_SPI                                                            05/24/2026 16:55:24 PAGE 2   
+C51 COMPILER V9.52.0.0   RF_SPI                                                            06/06/2026 21:26:43 PAGE 2   
 
   54   1          // reset spi
   55   1          SYS_CON0 &= (~0x4);
@@ -126,7 +126,7 @@ line level    source
  113            * @brief  RF spi read one byte function 
  114            * @param  addr : address
  115            * @retval Read data
-C51 COMPILER V9.52.0.0   RF_SPI                                                            05/24/2026 16:55:24 PAGE 3   
+C51 COMPILER V9.52.0.0   RF_SPI                                                            06/06/2026 21:26:43 PAGE 3   
 
  116            */
  117          u8 rf_spi_read_byte(u8 addr)
@@ -190,7 +190,7 @@ line level    source
  175          
  176          /**
  177            * @brief  RF spi write command and data operate function 
-C51 COMPILER V9.52.0.0   RF_SPI                                                            05/24/2026 16:55:24 PAGE 4   
+C51 COMPILER V9.52.0.0   RF_SPI                                                            06/06/2026 21:26:43 PAGE 4   
 
  178            * @param  cmd   : command operation
  179            * @param  wdata : write data

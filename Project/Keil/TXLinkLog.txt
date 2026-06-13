@@ -1,49 +1,48 @@
-[05-24 16:55:25]Log start
-[05-24 16:55:25]Serial init start!
-[05-24 16:55:25]TXLink ready failed!
-[05-24 16:55:25]Serial close ok!
-[05-24 16:55:25]Serial init start!
-[05-24 16:55:25]Download driver ok!
-[05-24 16:55:25]uart_txm8c1010_set_driver:0x0
-[05-24 16:55:25]user uart set driver ok!
-[05-24 16:55:25]TXLink ready ok!
-[05-24 16:55:25]TXLink init ok!
-[05-24 16:55:25]Serial close ok!
-[05-24 16:55:25]AG_Init: 0x30a
-[05-24 16:55:25]AG_Init: 0x30b
-[05-24 16:55:25]AG_Init: 0x30f
-[05-24 16:55:25]AG_Init: 0x310
-[05-24 16:55:25]AG_Init: 0x311
-[05-24 16:55:25]AG_Init: 0x312
-[05-24 16:55:25]AG_Init: 0x100
-[05-24 16:55:25]InitMem: 0x0
-[05-24 16:55:25]Serial init start!
-[05-24 16:55:25]chip_init_api
-[05-24 16:55:25]TXLink chip init ok!
-[05-24 16:55:26]AG_Init: 0x201
-[05-24 16:55:26]AG_Init: 0x202
-[05-24 16:55:26]AG_Init: 0x203
-[05-24 16:55:26]AG_Init: 0x204
-[05-24 16:55:26]AG_Init: 0x205
-[05-24 16:55:26]AG_Init: 0x206
-[05-24 16:55:26]AG_Init: 0x207
-[05-24 16:55:26]AG_Init: 0x313
-[05-24 16:55:26]Serial init start!
-[05-24 16:55:26]EraseFlash: 0x0
-[05-24 16:55:26]TXLink chip erase ok!
-[05-24 16:55:26]AG_Init: 0x314
-[05-24 16:55:26]FlashLoad: 0x0
-[05-24 16:55:26]InitProgress: Loading...
-[05-24 16:55:26]WriteToFlash: 0xff008000
-[05-24 16:55:27]WriteToFlash: 0xff008800
-[05-24 16:55:27]InitProgress: Verifying...
-[05-24 16:55:27]VerifyFlash nAdr: 0xff008000
-[05-24 16:55:27]VerifyFlash nAdr: 0xff008800
-[05-24 16:55:27]chip_reset_api
-[05-24 16:55:27]Serial close ok!
-[05-24 16:55:27]AG_Init: 0x40c
-[05-24 16:55:27]CloseAllDlg: 0x0
-[05-24 16:55:27]StopTarget: 0x0
-[05-24 16:55:27]FreeCache: 0x0
-[05-24 16:55:27]StopTarget: 0x0
-[05-24 16:55:27]FreeCache: 0x0
+[06-03 11:34:04]Log start
+[06-03 11:34:04]Serial init start!
+[06-03 11:34:04]Serial close ok!
+[06-03 11:34:04]Serial init start!
+[06-03 11:34:04]Download driver ok!
+[06-03 11:34:04]uart_txm8c1010_set_driver:0x0
+[06-03 11:34:04]user uart set driver ok!
+[06-03 11:34:04]TXLink ready ok!
+[06-03 11:34:04]TXLink init ok!
+[06-03 11:34:04]Serial close ok!
+[06-03 11:34:04]AG_Init: 0x30a
+[06-03 11:34:04]AG_Init: 0x30b
+[06-03 11:34:04]AG_Init: 0x30f
+[06-03 11:34:04]AG_Init: 0x310
+[06-03 11:34:04]AG_Init: 0x311
+[06-03 11:34:04]AG_Init: 0x312
+[06-03 11:34:04]AG_Init: 0x100
+[06-03 11:34:04]InitMem: 0x0
+[06-03 11:34:04]Serial init start!
+[06-03 11:34:04]chip_init_api
+[06-03 11:34:04]TXLink chip init ok!
+[06-03 11:34:04]AG_Init: 0x201
+[06-03 11:34:04]AG_Init: 0x202
+[06-03 11:34:04]AG_Init: 0x203
+[06-03 11:34:04]AG_Init: 0x204
+[06-03 11:34:04]AG_Init: 0x205
+[06-03 11:34:04]AG_Init: 0x206
+[06-03 11:34:04]AG_Init: 0x207
+[06-03 11:34:04]AG_Init: 0x313
+[06-03 11:34:04]Serial init start!
+[06-03 11:34:04]EraseFlash: 0x0
+[06-03 11:34:04]TXLink chip erase ok!
+[06-03 11:34:04]AG_Init: 0x314
+[06-03 11:34:04]FlashLoad: 0x0
+[06-03 11:34:04]InitProgress: Loading...
+[06-03 11:34:04]WriteToFlash: 0xff008000
+[06-03 11:34:05]WriteToFlash: 0xff008800
+[06-03 11:34:05]InitProgress: Verifying...
+[06-03 11:34:05]VerifyFlash nAdr: 0xff008000
+[06-03 11:34:05]VerifyFlash nAdr: 0xff008800
+[06-03 11:34:06]chip_reset_api
+[06-03 11:34:06]Serial close ok!
+[06-03 11:34:06]AG_Init: 0x40c
+[06-03 11:34:06]CloseAllDlg: 0x0
+[06-03 11:34:06]StopTarget: 0x0
+[06-03 11:34:06]FreeCache: 0x0
+[06-03 11:34:06]StopTarget: 0x0
+[06-03 11:34:06]FreeCache: 0x0

@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         05/24/2026 16:55:24 PAGE 1   
+C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         06/06/2026 21:26:43 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE FOGIC_RXD
@@ -62,7 +62,7 @@ line level    source
                 RxD_Led = 0;
               
                 rf_init();
-C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         05/24/2026 16:55:24 PAGE 2   
+C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         06/06/2026 21:26:43 PAGE 2   
 
                   rf_spi_write_byte( REG_BANK0_FEATURE, 0x10 );  
                   rf_spi_write_byte( REG_BANK0_EN_AA, 0x00 );
@@ -126,7 +126,7 @@ line level    source
                     // Urt Package
                     URT_Buf[ 6 ] = RFM_Buf[ 1 ];  // Index
                     URT_Buf[ 7 ] = RFM_Buf[ 14 ]; // Active KEY
-C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         05/24/2026 16:55:24 PAGE 3   
+C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         06/06/2026 21:26:43 PAGE 3   
 
                               
                     // UUID
@@ -190,7 +190,7 @@ line level    source
                   case KFN_MOD_DEC:
                   case 0x15:
                   { 
-C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         05/24/2026 16:55:24 PAGE 4   
+C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         06/06/2026 21:26:43 PAGE 4   
 
                     P01 = FOGIC_LED_ONS;  
                     P05 = FOGIC_LED_OFF; 
@@ -209,7 +209,7 @@ line level    source
               }
               
               // ============================================================================ //
-              // TMR0 ◊ˆ 1mS SysTick
+              // TMR0 ÂÅö 1mS SysTick
               void Fogic_SysTick_Init( void )
               {
                   // Config 1ms 
@@ -254,7 +254,7 @@ line level    source
                     
                     Fogic_RFM_Reads();
                     if( URT_TxN && ((SysTick_CNT % 50) == 0) )
-C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         05/24/2026 16:55:24 PAGE 5   
+C51 COMPILER V9.52.0.0   FOGIC_RXD                                                         06/06/2026 21:26:43 PAGE 5   
 
                     {
                       URT_TxN--;

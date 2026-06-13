@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        05/24/2026  16:55:25  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/06/2026  21:26:43  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -58,51 +58,51 @@ LINK MAP OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
             CODE    837BH     00E2H     UNIT         ?C?LIB_CODE
             CODE    845DH     00A5H     UNIT         ?PR?MODE_RAINBOW_FADE?FOGIC_TXD
             CODE    8502H     008CH     UNIT         ?C_C51STARTUP
-            CODE    858EH     007DH     UNIT         ?PR?_PWM_FRAME?FOGIC_TXD
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 2
+            CODE    858EH     0080H     UNIT         ?PR?_PWM_FRAME?FOGIC_TXD
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 2
 
 
-            CODE    860BH     006BH     UNIT         ?PR?MODE_BREATH_WHITE?FOGIC_TXD
-            CODE    8676H     0066H     UNIT         ?PR?LED_SHOWMODE?FOGIC_TXD
-            CODE    86DCH     0059H     UNIT         ?PR?GPIO_INIT?FOGIC_TXD
-            CODE    8735H     0056H     UNIT         ?PR?_RF_RECEIVE_PACK?RF_OPERATE
-            CODE    878BH     0056H     UNIT         ?PR?_MODE_SOLID?FOGIC_TXD
-            CODE    87E1H     004FH     UNIT         ?PR?_DO_FADE?FOGIC_TXD
-            CODE    8830H     004FH     UNIT         ?PR?_FOGIC_RF_SEND?FOGIC_TXD
-            CODE    887FH     0049H     UNIT         ?PR?SYSTEM_INIT?SYSTEM
-            CODE    88C8H     0043H     UNIT         ?PR?RF_SPI_INIT?RF_SPI
-            CODE    890BH     003DH     UNIT         ?PR?MAIN?FOGIC_TXD
-            CODE    8948H     003BH     UNIT         ?PR?_LERP?FOGIC_TXD
-            CODE    8983H     0039H     UNIT         ?PR?FOGIC_RFM_INIT?FOGIC_TXD
-            CODE    89BCH     0036H     UNIT         ?PR?FOGIC_UART_INIT?FOGIC_COM
-            CODE    89F2H     0032H     UNIT         ?PR?_RF_MODE_SWITCH?RF_OPERATE
-            CODE    8A24H     002BH     UNIT         ?PR?_RF_SPI_READ_BUF?RF_SPI
-            CODE    8A4FH     002BH     UNIT         ?PR?_FOGIC_UART_TXSTRING?FOGIC_COM
-            CODE    8A7AH     0029H     UNIT         ?PR?_RF_SPI_WRITE_BUF?RF_SPI
-            CODE    8AA3H     0025H     UNIT         ?PR?_USER_PRINTF?DEBUG
-            CODE    8AC8H     0025H     UNIT         ?PR?_FOGIC_GETCRC?FOGIC_COM
-            CODE    8AEDH     0022H     UNIT         ?PR?DEBUG_INIT?DEBUG
-            CODE    8B0FH     0021H     UNIT         ?PR?_RF_BANK_SWITCH?RF_OPERATE
-            CODE    8B30H     0021H     UNIT         ?PR?_RF_SET_RATE?RF_OPERATE
-            CODE    8B51H     0020H     UNIT         ?PR?_RF_SEND_PACK?RF_OPERATE
-            CODE    8B71H     0018H     UNIT         ?PR?_DELAY_MS?DEBUG
-            CODE    8B89H     0018H     UNIT         ?CO?FOGIC_TXD
-            CODE    8BA1H     0016H     UNIT         ?PR?_RF_SPI_WRITE_DATA?RF_SPI
-            CODE    8BB7H     0015H     UNIT         ?PR?FOGIC_RFM_BUFINIT?FOGIC_TXD
-            CODE    8BCCH     0013H     UNIT         ?PR?RF_SPI_READ_DATA?RF_SPI
-            CODE    8BDFH     000FH     UNIT         ?PR?_RF_SPI_WRITE_CMD_DATA?RF_SPI
-            CODE    8BEEH     000EH     UNIT         ?PR?_RF_SET_CHN?RF_OPERATE
-            CODE    8BFCH     000DH     UNIT         ?PR?_RF_SPI_WRITE_BYTE?RF_SPI
-            CODE    8C09H     000DH     UNIT         ?PR?_DEBUG_PUTCHAR?DEBUG
-            CODE    8C16H     000BH     UNIT         ?PR?_RF_SPI_READ_BYTE?RF_SPI
-            CODE    8C21H     000BH     UNIT         ?PR?_DELAY?DEBUG
-            CODE    8C2CH     0008H     UNIT         ?PR?_RF_SPI_WRITE_CMD?RF_SPI
-            CODE    8C34H     0007H     UNIT         ?PR?RF_CLEAR_ALL_IRQ?RF_OPERATE
-            CODE    8C3BH     0007H     UNIT         ?C_INITSEG
-            CODE    8C42H     0005H     UNIT         ?PR?RF_CE_HIGH?RF_OPERATE
-            CODE    8C47H     0005H     UNIT         ?PR?RF_CE_LOW?RF_OPERATE
-            CODE    8C4CH     0005H     UNIT         ?PR?RF_FLUSH_TX?RF_OPERATE
-            CODE    8C51H     0005H     UNIT         ?PR?RF_FLUSH_RX?RF_OPERATE
+            CODE    860EH     006BH     UNIT         ?PR?MODE_BREATH_WHITE?FOGIC_TXD
+            CODE    8679H     0066H     UNIT         ?PR?LED_SHOWMODE?FOGIC_TXD
+            CODE    86DFH     0065H     UNIT         ?PR?GPIO_INIT?FOGIC_TXD
+            CODE    8744H     0056H     UNIT         ?PR?_RF_RECEIVE_PACK?RF_OPERATE
+            CODE    879AH     0056H     UNIT         ?PR?_MODE_SOLID?FOGIC_TXD
+            CODE    87F0H     004FH     UNIT         ?PR?_DO_FADE?FOGIC_TXD
+            CODE    883FH     004FH     UNIT         ?PR?_FOGIC_RF_SEND?FOGIC_TXD
+            CODE    888EH     0049H     UNIT         ?PR?SYSTEM_INIT?SYSTEM
+            CODE    88D7H     0043H     UNIT         ?PR?RF_SPI_INIT?RF_SPI
+            CODE    891AH     003DH     UNIT         ?PR?MAIN?FOGIC_TXD
+            CODE    8957H     003BH     UNIT         ?PR?_LERP?FOGIC_TXD
+            CODE    8992H     0039H     UNIT         ?PR?FOGIC_RFM_INIT?FOGIC_TXD
+            CODE    89CBH     0036H     UNIT         ?PR?FOGIC_UART_INIT?FOGIC_COM
+            CODE    8A01H     0032H     UNIT         ?PR?_RF_MODE_SWITCH?RF_OPERATE
+            CODE    8A33H     002BH     UNIT         ?PR?_RF_SPI_READ_BUF?RF_SPI
+            CODE    8A5EH     002BH     UNIT         ?PR?_FOGIC_UART_TXSTRING?FOGIC_COM
+            CODE    8A89H     0029H     UNIT         ?PR?_RF_SPI_WRITE_BUF?RF_SPI
+            CODE    8AB2H     0025H     UNIT         ?PR?_USER_PRINTF?DEBUG
+            CODE    8AD7H     0025H     UNIT         ?PR?_FOGIC_GETCRC?FOGIC_COM
+            CODE    8AFCH     0022H     UNIT         ?PR?DEBUG_INIT?DEBUG
+            CODE    8B1EH     0021H     UNIT         ?PR?_RF_BANK_SWITCH?RF_OPERATE
+            CODE    8B3FH     0021H     UNIT         ?PR?_RF_SET_RATE?RF_OPERATE
+            CODE    8B60H     0020H     UNIT         ?PR?_RF_SEND_PACK?RF_OPERATE
+            CODE    8B80H     0018H     UNIT         ?PR?_DELAY_MS?DEBUG
+            CODE    8B98H     0018H     UNIT         ?CO?FOGIC_TXD
+            CODE    8BB0H     0016H     UNIT         ?PR?_RF_SPI_WRITE_DATA?RF_SPI
+            CODE    8BC6H     0015H     UNIT         ?PR?FOGIC_RFM_BUFINIT?FOGIC_TXD
+            CODE    8BDBH     0013H     UNIT         ?PR?RF_SPI_READ_DATA?RF_SPI
+            CODE    8BEEH     000FH     UNIT         ?PR?_RF_SPI_WRITE_CMD_DATA?RF_SPI
+            CODE    8BFDH     000EH     UNIT         ?PR?_RF_SET_CHN?RF_OPERATE
+            CODE    8C0BH     000DH     UNIT         ?PR?_RF_SPI_WRITE_BYTE?RF_SPI
+            CODE    8C18H     000DH     UNIT         ?PR?_DEBUG_PUTCHAR?DEBUG
+            CODE    8C25H     000BH     UNIT         ?PR?_RF_SPI_READ_BYTE?RF_SPI
+            CODE    8C30H     000BH     UNIT         ?PR?_DELAY?DEBUG
+            CODE    8C3BH     0008H     UNIT         ?PR?_RF_SPI_WRITE_CMD?RF_SPI
+            CODE    8C43H     0007H     UNIT         ?PR?RF_CLEAR_ALL_IRQ?RF_OPERATE
+            CODE    8C4AH     0007H     UNIT         ?C_INITSEG
+            CODE    8C51H     0005H     UNIT         ?PR?RF_CE_HIGH?RF_OPERATE
+            CODE    8C56H     0005H     UNIT         ?PR?RF_CE_LOW?RF_OPERATE
+            CODE    8C5BH     0005H     UNIT         ?PR?RF_FLUSH_TX?RF_OPERATE
+            CODE    8C60H     0005H     UNIT         ?PR?RF_FLUSH_RX?RF_OPERATE
 
 
 
@@ -119,7 +119,7 @@ SEGMENT                                      DATA_GROUP
 ?PR?MAIN?FOGIC_TXD                         -----    -----
   +--> ?PR?SYSTEM_INIT?SYSTEM
   +--> ?PR?RF_SPI_INIT?RF_SPI
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 3
 
 
   +--> ?PR?GPIO_INIT?FOGIC_TXD
@@ -179,7 +179,7 @@ SEGMENT                                      DATA_GROUP
   +--> ?PR?_RF_SPI_WRITE_CMD?RF_SPI
 
 ?PR?_RF_SPI_WRITE_BUF?RF_SPI               002AH    0005H
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 4
 
 
   +--> ?PR?_RF_SPI_WRITE_DATA?RF_SPI
@@ -239,7 +239,7 @@ SEGMENT                                      DATA_GROUP
   +--> ?PR?_DO_FADE?FOGIC_TXD
 
 ?PR?_DO_FADE?FOGIC_TXD                     0027H    0008H
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 5
 
 
   +--> ?PR?_LERP?FOGIC_TXD
@@ -292,46 +292,46 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00AAH         PUBLIC        FLASH_TRIM
   D:00AEH         PUBLIC        WDT_KEY
-  C:887FH         PUBLIC        system_init
+  C:888EH         PUBLIC        system_init
   D:00A3H         PUBLIC        FLASH_TIM0
   D:00A4H         PUBLIC        FLASH_TIM1
   -------         PROC          SYSTEM_INIT
   -------         DO            
   D:0007H         SYMBOL        hrcsc_data
   -------         ENDDO         
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 6
 
 
-  C:887FH         LINE#         40
-  C:887FH         LINE#         41
-  C:887FH         LINE#         42
-  C:8886H         LINE#         44
-  C:8889H         LINE#         46
-  C:888CH         LINE#         47
-  C:888FH         LINE#         48
-  C:8892H         LINE#         50
-  C:8897H         LINE#         51
-  C:889CH         LINE#         52
-  C:88A0H         LINE#         53
-  C:88A5H         LINE#         55
-  C:88ACH         LINE#         58
-  C:88C7H         LINE#         61
+  C:888EH         LINE#         40
+  C:888EH         LINE#         41
+  C:888EH         LINE#         42
+  C:8895H         LINE#         44
+  C:8898H         LINE#         46
+  C:889BH         LINE#         47
+  C:889EH         LINE#         48
+  C:88A1H         LINE#         50
+  C:88A6H         LINE#         51
+  C:88ABH         LINE#         52
+  C:88AFH         LINE#         53
+  C:88B4H         LINE#         55
+  C:88BBH         LINE#         58
+  C:88D6H         LINE#         61
   -------         ENDPROC       SYSTEM_INIT
   -------         ENDMOD        SYSTEM
 
   -------         MODULE        RF_OPERATE
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:8C42H         PUBLIC        rf_ce_high
-  C:8C34H         PUBLIC        rf_clear_all_irq
-  C:8B30H         PUBLIC        _rf_set_rate
-  C:8BEEH         PUBLIC        _rf_set_chn
-  C:8735H         PUBLIC        _rf_receive_pack
-  C:8C51H         PUBLIC        rf_flush_rx
-  C:8C4CH         PUBLIC        rf_flush_tx
-  C:8C47H         PUBLIC        rf_ce_low
-  C:8B0FH         PUBLIC        _rf_bank_switch
-  C:89F2H         PUBLIC        _rf_mode_switch
-  C:8B51H         PUBLIC        _rf_send_pack
+  C:8C51H         PUBLIC        rf_ce_high
+  C:8C43H         PUBLIC        rf_clear_all_irq
+  C:8B3FH         PUBLIC        _rf_set_rate
+  C:8BFDH         PUBLIC        _rf_set_chn
+  C:8744H         PUBLIC        _rf_receive_pack
+  C:8C60H         PUBLIC        rf_flush_rx
+  C:8C5BH         PUBLIC        rf_flush_tx
+  C:8C56H         PUBLIC        rf_ce_low
+  C:8B1EH         PUBLIC        _rf_bank_switch
+  C:8A01H         PUBLIC        _rf_mode_switch
+  C:8B60H         PUBLIC        _rf_send_pack
   C:817BH         PUBLIC        rf_init
   -------         PROC          RF_INIT
   -------         DO            
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   C:81DEH         LINE#         63
   C:81E1H         LINE#         64
   C:81E4H         LINE#         65
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 7
 
 
   C:81F2H         LINE#         67
@@ -391,78 +391,78 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   C:8279H         LINE#         98
   -------         ENDPROC       RF_INIT
   -------         PROC          RF_CE_HIGH
-  C:8C42H         LINE#         106
-  C:8C42H         LINE#         107
-  C:8C42H         LINE#         108
+  C:8C51H         LINE#         106
+  C:8C51H         LINE#         107
+  C:8C51H         LINE#         108
   -------         ENDPROC       RF_CE_HIGH
   -------         PROC          RF_CE_LOW
-  C:8C47H         LINE#         116
-  C:8C47H         LINE#         117
-  C:8C47H         LINE#         118
+  C:8C56H         LINE#         116
+  C:8C56H         LINE#         117
+  C:8C56H         LINE#         118
   -------         ENDPROC       RF_CE_LOW
   -------         PROC          _RF_BANK_SWITCH
   D:002AH         SYMBOL        bank
   -------         DO            
   D:002BH         SYMBOL        sta
   -------         ENDDO         
-  C:8B0FH         LINE#         126
-  C:8B11H         LINE#         127
-  C:8B11H         LINE#         130
-  C:8B18H         LINE#         131
-  C:8B1CH         LINE#         132
-  C:8B1CH         LINE#         133
-  C:8B21H         LINE#         134
-  C:8B21H         LINE#         135
-  C:8B21H         LINE#         136
-  C:8B21H         LINE#         137
-  C:8B23H         LINE#         139
-  C:8B23H         LINE#         140
-  C:8B28H         LINE#         141
-  C:8B28H         LINE#         142
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 8
+  C:8B1EH         LINE#         126
+  C:8B20H         LINE#         127
+  C:8B20H         LINE#         130
+  C:8B27H         LINE#         131
+  C:8B2BH         LINE#         132
+  C:8B2BH         LINE#         133
+  C:8B30H         LINE#         134
+  C:8B30H         LINE#         135
+  C:8B30H         LINE#         136
+  C:8B30H         LINE#         137
+  C:8B32H         LINE#         139
+  C:8B32H         LINE#         140
+  C:8B37H         LINE#         141
+  C:8B37H         LINE#         142
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 8
 
 
-  C:8B2FH         LINE#         143
-  C:8B2FH         LINE#         144
-  C:8B2FH         LINE#         145
+  C:8B3EH         LINE#         143
+  C:8B3EH         LINE#         144
+  C:8B3EH         LINE#         145
   -------         ENDPROC       _RF_BANK_SWITCH
   -------         PROC          RF_CLEAR_ALL_IRQ
-  C:8C34H         LINE#         152
-  C:8C34H         LINE#         153
-  C:8C34H         LINE#         154
+  C:8C43H         LINE#         152
+  C:8C43H         LINE#         153
+  C:8C43H         LINE#         154
   -------         ENDPROC       RF_CLEAR_ALL_IRQ
   -------         PROC          RF_FLUSH_TX
-  C:8C4CH         LINE#         162
-  C:8C4CH         LINE#         163
-  C:8C4CH         LINE#         164
+  C:8C5BH         LINE#         162
+  C:8C5BH         LINE#         163
+  C:8C5BH         LINE#         164
   -------         ENDPROC       RF_FLUSH_TX
   -------         PROC          RF_FLUSH_RX
-  C:8C51H         LINE#         172
-  C:8C51H         LINE#         173
-  C:8C51H         LINE#         174
+  C:8C60H         LINE#         172
+  C:8C60H         LINE#         173
+  C:8C60H         LINE#         174
   -------         ENDPROC       RF_FLUSH_RX
   -------         PROC          _RF_MODE_SWITCH
   D:0048H         SYMBOL        mode
   -------         DO            
   D:0049H         SYMBOL        reg_val
   -------         ENDDO         
-  C:89F2H         LINE#         182
-  C:89F4H         LINE#         183
-  C:89F4H         LINE#         186
-  C:89FBH         LINE#         187
-  C:89FFH         LINE#         188
-  C:89FFH         LINE#         189
-  C:8A02H         LINE#         190
-  C:8A04H         LINE#         192
-  C:8A04H         LINE#         193
-  C:8A07H         LINE#         194
-  C:8A07H         LINE#         196
-  C:8A0EH         LINE#         197
-  C:8A13H         LINE#         198
-  C:8A13H         LINE#         199
-  C:8A1DH         LINE#         200
-  C:8A23H         LINE#         203
-  C:8A23H         LINE#         204
+  C:8A01H         LINE#         182
+  C:8A03H         LINE#         183
+  C:8A03H         LINE#         186
+  C:8A0AH         LINE#         187
+  C:8A0EH         LINE#         188
+  C:8A0EH         LINE#         189
+  C:8A11H         LINE#         190
+  C:8A13H         LINE#         192
+  C:8A13H         LINE#         193
+  C:8A16H         LINE#         194
+  C:8A16H         LINE#         196
+  C:8A1DH         LINE#         197
+  C:8A22H         LINE#         198
+  C:8A22H         LINE#         199
+  C:8A2CH         LINE#         200
+  C:8A32H         LINE#         203
+  C:8A32H         LINE#         204
   -------         ENDPROC       _RF_MODE_SWITCH
   -------         PROC          _RF_SEND_PACK
   D:0025H         SYMBOL        cmd
@@ -471,15 +471,15 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   -------         DO            
   D:0007H         SYMBOL        sta
   -------         ENDDO         
-  C:8B51H         LINE#         213
-  C:8B59H         LINE#         214
-  C:8B59H         LINE#         217
-  C:8B5EH         LINE#         218
-  C:8B62H         LINE#         219
-  C:8B62H         LINE#         220
-  C:8B70H         LINE#         221
-  C:8B70H         LINE#         222
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 9
+  C:8B60H         LINE#         213
+  C:8B68H         LINE#         214
+  C:8B68H         LINE#         217
+  C:8B6DH         LINE#         218
+  C:8B71H         LINE#         219
+  C:8B71H         LINE#         220
+  C:8B7FH         LINE#         221
+  C:8B7FH         LINE#         222
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 9
 
 
   -------         ENDPROC       _RF_SEND_PACK
@@ -490,153 +490,153 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:0007H         SYMBOL        fifo_sta
   D:0038H         SYMBOL        len
   -------         ENDDO         
-  C:8735H         LINE#         229
-  C:873BH         LINE#         230
-  C:873BH         LINE#         235
-  C:8742H         LINE#         236
-  C:8747H         LINE#         237
-  C:8747H         LINE#         238
-  C:8747H         LINE#         239
-  C:874EH         LINE#         240
-  C:8755H         LINE#         241
-  C:8755H         LINE#         242
-  C:8763H         LINE#         243
-  C:8765H         LINE#         245
-  C:8765H         LINE#         246
-  C:8768H         LINE#         247
-  C:8768H         LINE#         248
-  C:876DH         LINE#         249
-  C:8771H         LINE#         251
-  C:8778H         LINE#         252
-  C:877BH         LINE#         253
-  C:877BH         LINE#         255
-  C:8781H         LINE#         256
-  C:8781H         LINE#         257
-  C:8788H         LINE#         258
-  C:8788H         LINE#         259
-  C:878AH         LINE#         260
+  C:8744H         LINE#         229
+  C:874AH         LINE#         230
+  C:874AH         LINE#         235
+  C:8751H         LINE#         236
+  C:8756H         LINE#         237
+  C:8756H         LINE#         238
+  C:8756H         LINE#         239
+  C:875DH         LINE#         240
+  C:8764H         LINE#         241
+  C:8764H         LINE#         242
+  C:8772H         LINE#         243
+  C:8774H         LINE#         245
+  C:8774H         LINE#         246
+  C:8777H         LINE#         247
+  C:8777H         LINE#         248
+  C:877CH         LINE#         249
+  C:8780H         LINE#         251
+  C:8787H         LINE#         252
+  C:878AH         LINE#         253
+  C:878AH         LINE#         255
+  C:8790H         LINE#         256
+  C:8790H         LINE#         257
+  C:8797H         LINE#         258
+  C:8797H         LINE#         259
+  C:8799H         LINE#         260
   -------         ENDPROC       _RF_RECEIVE_PACK
   -------         PROC          _RF_SET_RATE
   D:004AH         SYMBOL        rate
   -------         DO            
   D:004BH         SYMBOL        val
   -------         ENDDO         
-  C:8B30H         LINE#         267
-  C:8B32H         LINE#         268
-  C:8B32H         LINE#         270
-  C:8B39H         LINE#         271
-  C:8B41H         LINE#         272
-  C:8B41H         LINE#         273
-  C:8B44H         LINE#         274
-  C:8B44H         LINE#         275
-  C:8B46H         LINE#         276
-  C:8B46H         LINE#         277
-  C:8B49H         LINE#         278
-  C:8B50H         LINE#         279
-  C:8B50H         LINE#         280
-  C:8B50H         LINE#         281
-  C:8B50H         LINE#         282
-  C:8B50H         LINE#         283
+  C:8B3FH         LINE#         267
+  C:8B41H         LINE#         268
+  C:8B41H         LINE#         270
+  C:8B48H         LINE#         271
+  C:8B50H         LINE#         272
+  C:8B50H         LINE#         273
+  C:8B53H         LINE#         274
+  C:8B53H         LINE#         275
+  C:8B55H         LINE#         276
+  C:8B55H         LINE#         277
+  C:8B58H         LINE#         278
+  C:8B5FH         LINE#         279
+  C:8B5FH         LINE#         280
+  C:8B5FH         LINE#         281
+  C:8B5FH         LINE#         282
+  C:8B5FH         LINE#         283
   -------         ENDPROC       _RF_SET_RATE
   -------         PROC          _RF_SET_CHN
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 10
 
 
   D:0005H         SYMBOL        chn
-  C:8BEEH         LINE#         290
-  C:8BF0H         LINE#         291
-  C:8BF0H         LINE#         292
-  C:8BF6H         LINE#         293
-  C:8BF6H         LINE#         294
-  C:8BFBH         LINE#         295
-  C:8BFBH         LINE#         296
+  C:8BFDH         LINE#         290
+  C:8BFFH         LINE#         291
+  C:8BFFH         LINE#         292
+  C:8C05H         LINE#         293
+  C:8C05H         LINE#         294
+  C:8C0AH         LINE#         295
+  C:8C0AH         LINE#         296
   -------         ENDPROC       _RF_SET_CHN
   -------         ENDMOD        RF_OPERATE
 
   -------         MODULE        RF_SPI
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:8BCCH         PUBLIC        rf_spi_read_data
-  C:8BA7H         PUBLIC        _rf_spi_write_data
+  C:8BDBH         PUBLIC        rf_spi_read_data
+  C:8BB6H         PUBLIC        _rf_spi_write_data
   D:00F3H         PUBLIC        SPI0_DATA
   D:00F2H         PUBLIC        SPI0_BAUD
-  C:8C16H         PUBLIC        _rf_spi_read_byte
-  C:88C8H         PUBLIC        rf_spi_init
-  C:8A24H         PUBLIC        _rf_spi_read_buf
-  C:8BDFH         PUBLIC        _rf_spi_write_cmd_data
-  C:8C2CH         PUBLIC        _rf_spi_write_cmd
-  C:8BFCH         PUBLIC        _rf_spi_write_byte
+  C:8C25H         PUBLIC        _rf_spi_read_byte
+  C:88D7H         PUBLIC        rf_spi_init
+  C:8A33H         PUBLIC        _rf_spi_read_buf
+  C:8BEEH         PUBLIC        _rf_spi_write_cmd_data
+  C:8C3BH         PUBLIC        _rf_spi_write_cmd
+  C:8C0BH         PUBLIC        _rf_spi_write_byte
   B:0080H.0       PUBLIC        P00
-  C:8A7AH         PUBLIC        _rf_spi_write_buf
+  C:8A89H         PUBLIC        _rf_spi_write_buf
   D:00F1H         PUBLIC        SPI0_CON
   D:00F4H         PUBLIC        SPI0_STA
   -------         PROC          RF_SPI_INIT
-  C:88C8H         LINE#         37
-  C:88C8H         LINE#         38
-  C:88C8H         LINE#         41
-  C:88CEH         LINE#         42
-  C:88D2H         LINE#         45
-  C:88D8H         LINE#         47
-  C:88DDH         LINE#         48
-  C:88E2H         LINE#         50
-  C:88E6H         LINE#         51
-  C:88EAH         LINE#         53
-  C:88F0H         LINE#         55
-  C:88F6H         LINE#         57
-  C:88FCH         LINE#         59
-  C:8902H         LINE#         61
-  C:8905H         LINE#         63
-  C:8908H         LINE#         65
-  C:890AH         LINE#         66
+  C:88D7H         LINE#         37
+  C:88D7H         LINE#         38
+  C:88D7H         LINE#         41
+  C:88DDH         LINE#         42
+  C:88E1H         LINE#         45
+  C:88E7H         LINE#         47
+  C:88ECH         LINE#         48
+  C:88F1H         LINE#         50
+  C:88F5H         LINE#         51
+  C:88F9H         LINE#         53
+  C:88FFH         LINE#         55
+  C:8905H         LINE#         57
+  C:890BH         LINE#         59
+  C:8911H         LINE#         61
+  C:8914H         LINE#         63
+  C:8917H         LINE#         65
+  C:8919H         LINE#         66
   -------         ENDPROC       RF_SPI_INIT
   -------         PROC          L?0024
   -------         ENDPROC       L?0024
   -------         PROC          _RF_SPI_WRITE_DATA
   D:0007H         SYMBOL        wdata
-  C:8BA7H         LINE#         73
-  C:8BA7H         LINE#         74
-  C:8BA7H         LINE#         75
-  C:8BACH         LINE#         77
-  C:8BAFH         LINE#         78
-  C:8BB1H         LINE#         79
-  C:8BB6H         LINE#         80
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 11
+  C:8BB6H         LINE#         73
+  C:8BB6H         LINE#         74
+  C:8BB6H         LINE#         75
+  C:8BBBH         LINE#         77
+  C:8BBEH         LINE#         78
+  C:8BC0H         LINE#         79
+  C:8BC5H         LINE#         80
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 11
 
 
   -------         ENDPROC       _RF_SPI_WRITE_DATA
   -------         PROC          RF_SPI_READ_DATA
-  C:8BCCH         LINE#         87
-  C:8BCCH         LINE#         88
-  C:8BCCH         LINE#         89
-  C:8BD1H         LINE#         91
-  C:8BD4H         LINE#         93
-  C:8BD7H         LINE#         94
-  C:8BDCH         LINE#         95
-  C:8BDEH         LINE#         96
+  C:8BDBH         LINE#         87
+  C:8BDBH         LINE#         88
+  C:8BDBH         LINE#         89
+  C:8BE0H         LINE#         91
+  C:8BE3H         LINE#         93
+  C:8BE6H         LINE#         94
+  C:8BEBH         LINE#         95
+  C:8BEDH         LINE#         96
   -------         ENDPROC       RF_SPI_READ_DATA
   -------         PROC          _RF_SPI_WRITE_BYTE
   D:0007H         SYMBOL        addr
   D:0006H         SYMBOL        wdata
-  C:8BFCH         LINE#         104
-  C:8BFEH         LINE#         105
-  C:8BFEH         LINE#         106
-  C:8BFEH         LINE#         107
-  C:8C01H         LINE#         108
-  C:8C06H         LINE#         109
-  C:8C08H         LINE#         110
+  C:8C0BH         LINE#         104
+  C:8C0DH         LINE#         105
+  C:8C0DH         LINE#         106
+  C:8C0DH         LINE#         107
+  C:8C10H         LINE#         108
+  C:8C15H         LINE#         109
+  C:8C17H         LINE#         110
   -------         ENDPROC       _RF_SPI_WRITE_BYTE
   -------         PROC          _RF_SPI_READ_BYTE
   D:0007H         SYMBOL        addr
   -------         DO            
   D:0007H         SYMBOL        rdata
   -------         ENDDO         
-  C:8C16H         LINE#         117
-  C:8C16H         LINE#         118
-  C:8C16H         LINE#         120
-  C:8C18H         LINE#         121
-  C:8C1BH         LINE#         122
-  C:8C1EH         LINE#         123
-  C:8C20H         LINE#         124
-  C:8C20H         LINE#         125
+  C:8C25H         LINE#         117
+  C:8C25H         LINE#         118
+  C:8C25H         LINE#         120
+  C:8C27H         LINE#         121
+  C:8C2AH         LINE#         122
+  C:8C2DH         LINE#         123
+  C:8C2FH         LINE#         124
+  C:8C2FH         LINE#         125
   -------         ENDPROC       _RF_SPI_READ_BYTE
   -------         PROC          _RF_SPI_WRITE_BUF
   D:0007H         SYMBOL        addr
@@ -645,171 +645,171 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   -------         DO            
   D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:8A7AH         LINE#         134
-  C:8A80H         LINE#         135
-  C:8A80H         LINE#         137
-  C:8A80H         LINE#         138
-  C:8A83H         LINE#         139
-  C:8A8BH         LINE#         140
-  C:8A9DH         LINE#         141
-  C:8AA0H         LINE#         142
-  C:8AA2H         LINE#         143
+  C:8A89H         LINE#         134
+  C:8A8FH         LINE#         135
+  C:8A8FH         LINE#         137
+  C:8A8FH         LINE#         138
+  C:8A92H         LINE#         139
+  C:8A9AH         LINE#         140
+  C:8AACH         LINE#         141
+  C:8AAFH         LINE#         142
+  C:8AB1H         LINE#         143
   -------         ENDPROC       _RF_SPI_WRITE_BUF
   -------         PROC          _RF_SPI_READ_BUF
   D:0007H         SYMBOL        addr
   D:003AH         SYMBOL        p_data
   D:003DH         SYMBOL        len
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 12
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 12
 
 
   -------         DO            
   D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:8A24H         LINE#         152
-  C:8A2AH         LINE#         153
-  C:8A2AH         LINE#         155
-  C:8A2CH         LINE#         156
-  C:8A2FH         LINE#         158
-  C:8A37H         LINE#         159
-  C:8A49H         LINE#         160
-  C:8A4CH         LINE#         161
-  C:8A4EH         LINE#         162
+  C:8A33H         LINE#         152
+  C:8A39H         LINE#         153
+  C:8A39H         LINE#         155
+  C:8A3BH         LINE#         156
+  C:8A3EH         LINE#         158
+  C:8A46H         LINE#         159
+  C:8A58H         LINE#         160
+  C:8A5BH         LINE#         161
+  C:8A5DH         LINE#         162
   -------         ENDPROC       _RF_SPI_READ_BUF
   -------         PROC          _RF_SPI_WRITE_CMD
   D:0007H         SYMBOL        cmd
-  C:8C2CH         LINE#         169
-  C:8C2CH         LINE#         170
-  C:8C2CH         LINE#         171
-  C:8C2EH         LINE#         172
-  C:8C31H         LINE#         173
-  C:8C33H         LINE#         174
+  C:8C3BH         LINE#         169
+  C:8C3BH         LINE#         170
+  C:8C3BH         LINE#         171
+  C:8C3DH         LINE#         172
+  C:8C40H         LINE#         173
+  C:8C42H         LINE#         174
   -------         ENDPROC       _RF_SPI_WRITE_CMD
   -------         PROC          _RF_SPI_WRITE_CMD_DATA
   D:0007H         SYMBOL        cmd
   D:0006H         SYMBOL        wdata
-  C:8BDFH         LINE#         182
-  C:8BE1H         LINE#         183
-  C:8BE1H         LINE#         184
-  C:8BE3H         LINE#         185
-  C:8BE6H         LINE#         186
-  C:8BEBH         LINE#         187
-  C:8BEDH         LINE#         188
+  C:8BEEH         LINE#         182
+  C:8BF0H         LINE#         183
+  C:8BF0H         LINE#         184
+  C:8BF2H         LINE#         185
+  C:8BF5H         LINE#         186
+  C:8BFAH         LINE#         187
+  C:8BFCH         LINE#         188
   -------         ENDPROC       _RF_SPI_WRITE_CMD_DATA
   -------         ENDMOD        RF_SPI
 
   -------         MODULE        DEBUG
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:8C21H         PUBLIC        _delay
+  C:8C30H         PUBLIC        _delay
   D:00F8H         PUBLIC        UART0_BAUD0
   D:00F9H         PUBLIC        UART0_BAUD1
-  C:8AEDH         PUBLIC        debug_init
+  C:8AFCH         PUBLIC        debug_init
   D:00F6H         PUBLIC        UART0_CON
   D:00F7H         PUBLIC        UART0_STA
-  C:8AA3H         PUBLIC        _user_printf
-  C:8B71H         PUBLIC        _delay_ms
-  C:8C09H         PUBLIC        _debug_putchar
+  C:8AB2H         PUBLIC        _user_printf
+  C:8B80H         PUBLIC        _delay_ms
+  C:8C18H         PUBLIC        _debug_putchar
   D:00FAH         PUBLIC        UART0_DATA
   -------         PROC          _DELAY
   D:0006H         SYMBOL        cnt
-  C:8C21H         LINE#         37
-  C:8C21H         LINE#         38
-  C:8C21H         LINE#         39
-  C:8C2BH         LINE#         40
-  C:8C2BH         LINE#         41
+  C:8C30H         LINE#         37
+  C:8C30H         LINE#         38
+  C:8C30H         LINE#         39
+  C:8C3AH         LINE#         40
+  C:8C3AH         LINE#         41
   -------         ENDPROC       _DELAY
   -------         PROC          _DELAY_MS
   D:0002H         SYMBOL        ms
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 13
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 13
 
 
-  C:8B71H         LINE#         48
-  C:8B75H         LINE#         49
-  C:8B75H         LINE#         50
-  C:8B7FH         LINE#         51
-  C:8B86H         LINE#         52
-  C:8B88H         LINE#         53
+  C:8B80H         LINE#         48
+  C:8B84H         LINE#         49
+  C:8B84H         LINE#         50
+  C:8B8EH         LINE#         51
+  C:8B95H         LINE#         52
+  C:8B97H         LINE#         53
   -------         ENDPROC       _DELAY_MS
   -------         PROC          _DEBUG_PUTCHAR
   D:0007H         SYMBOL        uart_data
-  C:8C09H         LINE#         60
-  C:8C09H         LINE#         61
-  C:8C09H         LINE#         62
-  C:8C0EH         LINE#         63
-  C:8C10H         LINE#         64
-  C:8C15H         LINE#         65
+  C:8C18H         LINE#         60
+  C:8C18H         LINE#         61
+  C:8C18H         LINE#         62
+  C:8C1DH         LINE#         63
+  C:8C1FH         LINE#         64
+  C:8C24H         LINE#         65
   -------         ENDPROC       _DEBUG_PUTCHAR
   -------         PROC          DEBUG_INIT
   -------         DO            
   D:004CH         SYMBOL        i
   -------         ENDDO         
-  C:8AEDH         LINE#         72
-  C:8AEDH         LINE#         73
-  C:8AEDH         LINE#         74
-  C:8AF0H         LINE#         77
-  C:8AF6H         LINE#         78
-  C:8AFAH         LINE#         79
-  C:8B00H         LINE#         81
-  C:8B05H         LINE#         83
-  C:8B08H         LINE#         84
-  C:8B0BH         LINE#         85
-  C:8B0EH         LINE#         86
+  C:8AFCH         LINE#         72
+  C:8AFCH         LINE#         73
+  C:8AFCH         LINE#         74
+  C:8AFFH         LINE#         77
+  C:8B05H         LINE#         78
+  C:8B09H         LINE#         79
+  C:8B0FH         LINE#         81
+  C:8B14H         LINE#         83
+  C:8B17H         LINE#         84
+  C:8B1AH         LINE#         85
+  C:8B1DH         LINE#         86
   -------         ENDPROC       DEBUG_INIT
   -------         PROC          _USER_PRINTF
   D:0042H         SYMBOL        p_data
-  C:8AA3H         LINE#         93
-  C:8AA9H         LINE#         94
-  C:8AA9H         LINE#         95
-  C:8AB4H         LINE#         96
-  C:8AC5H         LINE#         97
-  C:8AC7H         LINE#         98
+  C:8AB2H         LINE#         93
+  C:8AB8H         LINE#         94
+  C:8AB8H         LINE#         95
+  C:8AC3H         LINE#         96
+  C:8AD4H         LINE#         97
+  C:8AD6H         LINE#         98
   -------         ENDPROC       _USER_PRINTF
   -------         ENDMOD        DEBUG
 
   -------         MODULE        FOGIC_COM
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:8A4FH         PUBLIC        _Fogic_Uart_TxString
+  C:8A5EH         PUBLIC        _Fogic_Uart_TxString
   D:00F8H         PUBLIC        UART0_BAUD0
   D:00F9H         PUBLIC        UART0_BAUD1
   D:00F6H         PUBLIC        UART0_CON
   D:00F7H         PUBLIC        UART0_STA
-  C:8AC8H         PUBLIC        _Fogic_GetCRC
-  C:89BCH         PUBLIC        Fogic_Uart_Init
+  C:8AD7H         PUBLIC        _Fogic_GetCRC
+  C:89CBH         PUBLIC        Fogic_Uart_Init
   D:00FAH         PUBLIC        UART0_DATA
   -------         PROC          _FOGIC_GETCRC
   D:0025H         SYMBOL        Buf
   D:0005H         SYMBOL        Cnt
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 14
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 14
 
 
   D:0007H         SYMBOL        CrcV
   D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:8AC8H         LINE#         22
-  C:8ACEH         LINE#         23
-  C:8ACEH         LINE#         24
-  C:8AD0H         LINE#         26
-  C:8AD6H         LINE#         27
-  C:8AD6H         LINE#         28
-  C:8AE6H         LINE#         29
-  C:8AE9H         LINE#         30
-  C:8AECH         LINE#         31
+  C:8AD7H         LINE#         22
+  C:8ADDH         LINE#         23
+  C:8ADDH         LINE#         24
+  C:8ADFH         LINE#         26
+  C:8AE5H         LINE#         27
+  C:8AE5H         LINE#         28
+  C:8AF5H         LINE#         29
+  C:8AF8H         LINE#         30
+  C:8AFBH         LINE#         31
   -------         ENDPROC       _FOGIC_GETCRC
   -------         PROC          FOGIC_UART_INIT
   -------         DO            
   D:003EH         SYMBOL        BaudVal
   -------         ENDDO         
-  C:89BCH         LINE#         34
-  C:89BCH         LINE#         35
-  C:89BCH         LINE#         36
-  C:89C7H         LINE#         39
-  C:89CDH         LINE#         40
-  C:89D1H         LINE#         41
-  C:89D7H         LINE#         43
-  C:89DCH         LINE#         45
-  C:89EBH         LINE#         46
-  C:89EEH         LINE#         47
-  C:89F1H         LINE#         48
+  C:89CBH         LINE#         34
+  C:89CBH         LINE#         35
+  C:89CBH         LINE#         36
+  C:89D6H         LINE#         39
+  C:89DCH         LINE#         40
+  C:89E0H         LINE#         41
+  C:89E6H         LINE#         43
+  C:89EBH         LINE#         45
+  C:89FAH         LINE#         46
+  C:89FDH         LINE#         47
+  C:8A00H         LINE#         48
   -------         ENDPROC       FOGIC_UART_INIT
   -------         PROC          _FOGIC_UART_TXSTRING
   D:0045H         SYMBOL        Dat
@@ -817,15 +817,15 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   -------         DO            
   D:0007H         SYMBOL        i
   -------         ENDDO         
-  C:8A4FH         LINE#         50
-  C:8A55H         LINE#         51
-  C:8A55H         LINE#         53
-  C:8A5CH         LINE#         54
-  C:8A5CH         LINE#         55
-  C:8A61H         LINE#         56
-  C:8A71H         LINE#         57
-  C:8A76H         LINE#         58
-  C:8A79H         LINE#         59
+  C:8A5EH         LINE#         50
+  C:8A64H         LINE#         51
+  C:8A64H         LINE#         53
+  C:8A6BH         LINE#         54
+  C:8A6BH         LINE#         55
+  C:8A70H         LINE#         56
+  C:8A80H         LINE#         57
+  C:8A85H         LINE#         58
+  C:8A88H         LINE#         59
   -------         ENDPROC       _FOGIC_UART_TXSTRING
   -------         ENDMOD        FOGIC_COM
 
@@ -838,8 +838,8 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   C:8003H         PUBLIC        mode_breath_color
   D:0008H         PUBLIC        P0_PU_Reg
   D:00ACH         PUBLIC        WKPND
-  C:860BH         SYMBOL        mode_breath_white
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 15
+  C:860EH         SYMBOL        mode_breath_white
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 15
 
 
   D:0009H         PUBLIC        P1_PU_Reg
@@ -851,25 +851,25 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:000FH         PUBLIC        P1_MD0_Reg
   D:0010H         PUBLIC        P0_MD1_Reg
   D:0011H         PUBLIC        P1_MD1_Reg
-  C:878BH         SYMBOL        _mode_solid
-  C:890BH         PUBLIC        main
-  C:86DCH         SYMBOL        GPIO_Init
-  C:8983H         SYMBOL        Fogic_RFM_Init
+  C:879AH         SYMBOL        _mode_solid
+  C:891AH         PUBLIC        main
+  C:86DFH         SYMBOL        GPIO_Init
+  C:8992H         SYMBOL        Fogic_RFM_Init
   B:0080H.1       PUBLIC        P01
-  C:8948H         SYMBOL        _lerp
+  C:8957H         SYMBOL        _lerp
   B:0080H.5       PUBLIC        P05
   B:0090H.5       PUBLIC        P15
   B:0080H.6       PUBLIC        P06
   D:00ABH         PUBLIC        WKUP_CON0
   C:8597H         SYMBOL        _pwm_frame
-  C:87E1H         SYMBOL        _do_fade
-  C:8BB7H         SYMBOL        Fogic_RFM_BufInit
-  C:8830H         SYMBOL        _Fogic_RF_Send
-  C:8B89H         SYMBOL        COLORS
+  C:87F0H         SYMBOL        _do_fade
+  C:8BC6H         SYMBOL        Fogic_RFM_BufInit
+  C:883FH         SYMBOL        _Fogic_RF_Send
+  C:8B98H         SYMBOL        COLORS
   D:00BAH         PUBLIC        LVD_CON0
   C:827CH         SYMBOL        Enter_Sleep
   D:00BEH         PUBLIC        LP_CON
-  C:8676H         SYMBOL        LED_ShowMode
+  C:8679H         SYMBOL        LED_ShowMode
   D:0012H         PUBLIC        RFM_Buf
   D:0022H         SYMBOL        g_rekey
   D:00A4H         PUBLIC        FLASH_TIM1
@@ -887,42 +887,42 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:0033H         SYMBOL        d
   -------         ENDDO         
   -------         ENDDO         
-  C:8597H         LINE#         78
-  C:859DH         LINE#         79
-  C:859DH         LINE#         81
-  C:85A0H         LINE#         82
+  C:8597H         LINE#         79
+  C:859DH         LINE#         80
+  C:859DH         LINE#         82
   C:85A0H         LINE#         83
-  C:85ACH         LINE#         84
-  C:85B8H         LINE#         85
-  C:85C4H         LINE#         86
-  C:85CBH         LINE#         88
+  C:85A0H         LINE#         84
+  C:85ADH         LINE#         85
+  C:85BAH         LINE#         86
+  C:85C7H         LINE#         87
   C:85CEH         LINE#         89
-  C:85CEH         LINE#         92
+  C:85D1H         LINE#         90
   C:85D1H         LINE#         93
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 16
+  C:85D4H         LINE#         94
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 16
 
 
-  C:85D1H         LINE#         94
-  C:85D8H         LINE#         95
+  C:85D4H         LINE#         95
   C:85DBH         LINE#         96
-  C:85E4H         LINE#         98
-  C:85F0H         LINE#         99
-  C:85F7H         LINE#         100
-  C:85FDH         LINE#         101
-  C:8601H         LINE#         103
-  C:8601H         LINE#         104
-  C:860AH         LINE#         105
+  C:85DEH         LINE#         97
+  C:85E7H         LINE#         99
+  C:85F3H         LINE#         100
+  C:85FAH         LINE#         101
+  C:8600H         LINE#         102
+  C:8604H         LINE#         104
+  C:8604H         LINE#         105
+  C:860DH         LINE#         106
   -------         ENDPROC       _PWM_FRAME
   -------         PROC          _LERP
   D:0002H         SYMBOL        a
   D:0030H         SYMBOL        b
   D:0003H         SYMBOL        i
   D:0032H         SYMBOL        steps
-  C:8948H         LINE#         111
-  C:894CH         LINE#         112
-  C:894CH         LINE#         113
-  C:8969H         LINE#         114
-  C:8982H         LINE#         115
+  C:8957H         LINE#         112
+  C:895BH         LINE#         113
+  C:895BH         LINE#         114
+  C:8978H         LINE#         115
+  C:8991H         LINE#         116
   -------         ENDPROC       _LERP
   -------         PROC          _DO_FADE
   D:0027H         SYMBOL        r0
@@ -935,31 +935,31 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   -------         DO            
   D:002EH         SYMBOL        i
   -------         ENDDO         
-  C:87E1H         LINE#         121
-  C:87E7H         LINE#         124
-  C:87E7H         LINE#         126
-  C:87F1H         LINE#         127
-  C:87F1H         LINE#         128
-  C:87F8H         LINE#         129
-  C:8829H         LINE#         132
-  C:882DH         LINE#         133
-  C:882FH         LINE#         134
+  C:87F0H         LINE#         122
+  C:87F6H         LINE#         125
+  C:87F6H         LINE#         127
+  C:8800H         LINE#         128
+  C:8800H         LINE#         129
+  C:8807H         LINE#         130
+  C:8838H         LINE#         133
+  C:883CH         LINE#         134
+  C:883EH         LINE#         135
   -------         ENDPROC       _DO_FADE
   -------         PROC          _MODE_SOLID
   D:0024H         SYMBOL        ci
   -------         DO            
   D:0025H         SYMBOL        total
   -------         ENDDO         
-  C:878BH         LINE#         155
-  C:878DH         LINE#         156
-  C:878DH         LINE#         158
-  C:8796H         LINE#         159
-  C:8796H         LINE#         160
-  C:87CFH         LINE#         161
-  C:87E0H         LINE#         162
+  C:879AH         LINE#         156
+  C:879CH         LINE#         157
+  C:879CH         LINE#         159
+  C:87A5H         LINE#         160
+  C:87A5H         LINE#         161
+  C:87DEH         LINE#         162
+  C:87EFH         LINE#         163
   -------         ENDPROC       _MODE_SOLID
   -------         PROC          MODE_BREATH_WHITE
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 17
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 17
 
 
   -------         DO            
@@ -967,23 +967,23 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:0026H         SYMBOL        v
   D:0027H         SYMBOL        i
   -------         ENDDO         
-  C:860BH         LINE#         167
-  C:860BH         LINE#         168
-  C:860BH         LINE#         171
-  C:8610H         LINE#         172
-  C:861FH         LINE#         173
-  C:861FH         LINE#         175
-  C:8637H         LINE#         176
-  C:8637H         LINE#         177
-  C:8639H         LINE#         178
+  C:860EH         LINE#         168
+  C:860EH         LINE#         169
+  C:860EH         LINE#         172
+  C:8613H         LINE#         173
+  C:8622H         LINE#         174
+  C:8622H         LINE#         176
+  C:863AH         LINE#         177
+  C:863AH         LINE#         178
   C:863CH         LINE#         179
-  C:8648H         LINE#         181
-  C:8661H         LINE#         182
-  C:8661H         LINE#         183
-  C:8666H         LINE#         184
+  C:863FH         LINE#         180
+  C:864BH         LINE#         182
+  C:8664H         LINE#         183
+  C:8664H         LINE#         184
   C:8669H         LINE#         185
-  C:8675H         LINE#         186
-  C:8675H         LINE#         187
+  C:866CH         LINE#         186
+  C:8678H         LINE#         187
+  C:8678H         LINE#         188
   -------         ENDPROC       MODE_BREATH_WHITE
   -------         PROC          MODE_BREATH_COLOR
   -------         DO            
@@ -992,25 +992,25 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:0026H         SYMBOL        v
   D:0027H         SYMBOL        total
   -------         ENDDO         
-  C:8003H         LINE#         193
   C:8003H         LINE#         194
-  C:8003H         LINE#         197
-  C:8008H         LINE#         198
-  C:800AH         LINE#         199
-  C:801FH         LINE#         200
-  C:801FH         LINE#         202
-  C:8040H         LINE#         203
+  C:8003H         LINE#         195
+  C:8003H         LINE#         198
+  C:8008H         LINE#         199
+  C:800AH         LINE#         200
+  C:801FH         LINE#         201
+  C:801FH         LINE#         203
   C:8040H         LINE#         204
-  C:8048H         LINE#         208
-  C:80B7H         LINE#         210
-  C:80C7H         LINE#         212
-  C:80E9H         LINE#         213
+  C:8040H         LINE#         205
+  C:8048H         LINE#         209
+  C:80B7H         LINE#         211
+  C:80C7H         LINE#         213
   C:80E9H         LINE#         214
-  C:80F4H         LINE#         218
-  C:8163H         LINE#         220
-  C:8170H         LINE#         221
-  C:8177H         LINE#         222
-  C:817AH         LINE#         223
+  C:80E9H         LINE#         215
+  C:80F4H         LINE#         219
+  C:8163H         LINE#         221
+  C:8170H         LINE#         222
+  C:8177H         LINE#         223
+  C:817AH         LINE#         224
   -------         ENDPROC       MODE_BREATH_COLOR
   -------         PROC          MODE_RAINBOW_FADE
   -------         DO            
@@ -1018,189 +1018,191 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
   D:0024H         SYMBOL        nc
   D:0025H         SYMBOL        total
   -------         ENDDO         
-  C:845DH         LINE#         228
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 18
-
-
   C:845DH         LINE#         229
-  C:845DH         LINE#         232
-  C:8462H         LINE#         233
-  C:8463H         LINE#         234
-  C:8478H         LINE#         235
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 18
+
+
+  C:845DH         LINE#         230
+  C:845DH         LINE#         233
+  C:8462H         LINE#         234
+  C:8463H         LINE#         235
   C:8478H         LINE#         236
-  C:847EH         LINE#         237
-  C:84FCH         LINE#         242
-  C:84FEH         LINE#         243
-  C:8501H         LINE#         244
+  C:8478H         LINE#         237
+  C:847EH         LINE#         238
+  C:84FCH         LINE#         243
+  C:84FEH         LINE#         244
+  C:8501H         LINE#         245
   -------         ENDPROC       MODE_RAINBOW_FADE
   -------         PROC          LED_SHOWMODE
-  C:8676H         LINE#         249
-  C:8676H         LINE#         250
-  C:8676H         LINE#         251
-  C:86A5H         LINE#         252
-  C:86A5H         LINE#         253
-  C:86A9H         LINE#         254
-  C:86ADH         LINE#         255
-  C:86B1H         LINE#         256
-  C:86B5H         LINE#         257
-  C:86B9H         LINE#         258
-  C:86BDH         LINE#         259
-  C:86C1H         LINE#         260
-  C:86C8H         LINE#         261
-  C:86CDH         LINE#         262
-  C:86D2H         LINE#         263
+  C:8679H         LINE#         250
+  C:8679H         LINE#         251
+  C:8679H         LINE#         252
+  C:86A8H         LINE#         253
+  C:86A8H         LINE#         254
+  C:86ACH         LINE#         255
+  C:86B0H         LINE#         256
+  C:86B4H         LINE#         257
+  C:86B8H         LINE#         258
+  C:86BCH         LINE#         259
+  C:86C0H         LINE#         260
+  C:86C4H         LINE#         261
+  C:86CBH         LINE#         262
+  C:86D0H         LINE#         263
   C:86D5H         LINE#         264
-  C:86D5H         LINE#         265
-  C:86D5H         LINE#         266
-  C:86DBH         LINE#         267
+  C:86D8H         LINE#         265
+  C:86D8H         LINE#         266
+  C:86D8H         LINE#         267
+  C:86DEH         LINE#         268
   -------         ENDPROC       LED_SHOWMODE
   -------         PROC          FOGIC_RFM_INIT
-  C:8983H         LINE#         272
-  C:8983H         LINE#         273
-  C:8983H         LINE#         274
-  C:8986H         LINE#         275
-  C:898DH         LINE#         276
-  C:8994H         LINE#         277
-  C:899BH         LINE#         278
-  C:89A2H         LINE#         279
-  C:89A9H         LINE#         280
-  C:89B0H         LINE#         281
-  C:89B3H         LINE#         282
-  C:89B6H         LINE#         283
-  C:89B9H         LINE#         284
+  C:8992H         LINE#         273
+  C:8992H         LINE#         274
+  C:8992H         LINE#         275
+  C:8995H         LINE#         276
+  C:899CH         LINE#         277
+  C:89A3H         LINE#         278
+  C:89AAH         LINE#         279
+  C:89B1H         LINE#         280
+  C:89B8H         LINE#         281
+  C:89BFH         LINE#         282
+  C:89C2H         LINE#         283
+  C:89C5H         LINE#         284
+  C:89C8H         LINE#         285
   -------         ENDPROC       FOGIC_RFM_INIT
   -------         PROC          FOGIC_RFM_BUFINIT
   -------         DO            
   D:0007H         SYMBOL        i
   -------         ENDDO         
-  C:8BB7H         LINE#         287
-  C:8BB7H         LINE#         288
-  C:8BB7H         LINE#         290
-  C:8BBAH         LINE#         291
-  C:8BBDH         LINE#         292
-  C:8BC6H         LINE#         293
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 19
+  C:8BC6H         LINE#         288
+  C:8BC6H         LINE#         289
+  C:8BC6H         LINE#         291
+  C:8BC9H         LINE#         292
+  C:8BCCH         LINE#         293
+  C:8BD5H         LINE#         294
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 19
 
 
-  C:8BC9H         LINE#         294
-  C:8BCBH         LINE#         295
+  C:8BD8H         LINE#         295
+  C:8BDAH         LINE#         296
   -------         ENDPROC       FOGIC_RFM_BUFINIT
   -------         PROC          _FOGIC_RF_SEND
   D:0007H         SYMBOL        key_func
   -------         DO            
   D:0024H         SYMBOL        i
   -------         ENDDO         
-  C:8830H         LINE#         297
-  C:8830H         LINE#         298
-  C:8830H         LINE#         300
-  C:8832H         LINE#         301
-  C:8837H         LINE#         302
-  C:8844H         LINE#         304
-  C:8847H         LINE#         305
-  C:8847H         LINE#         306
-  C:884AH         LINE#         307
-  C:884DH         LINE#         308
-  C:885BH         LINE#         309
-  C:885EH         LINE#         310
-  C:8865H         LINE#         311
-  C:8868H         LINE#         312
-  C:886BH         LINE#         313
-  C:886EH         LINE#         314
-  C:8875H         LINE#         315
-  C:887EH         LINE#         316
+  C:883FH         LINE#         298
+  C:883FH         LINE#         299
+  C:883FH         LINE#         301
+  C:8841H         LINE#         302
+  C:8846H         LINE#         303
+  C:8853H         LINE#         305
+  C:8856H         LINE#         306
+  C:8856H         LINE#         307
+  C:8859H         LINE#         308
+  C:885CH         LINE#         309
+  C:886AH         LINE#         310
+  C:886DH         LINE#         311
+  C:8874H         LINE#         312
+  C:8877H         LINE#         313
+  C:887AH         LINE#         314
+  C:887DH         LINE#         315
+  C:8884H         LINE#         316
+  C:888DH         LINE#         317
   -------         ENDPROC       _FOGIC_RF_SEND
   -------         PROC          GPIO_INIT
-  C:86DCH         LINE#         321
-  C:86DCH         LINE#         322
-  C:86DCH         LINE#         323
-  C:86E2H         LINE#         324
-  C:86E6H         LINE#         326
-  C:86EBH         LINE#         327
-  C:86EFH         LINE#         329
-  C:86F5H         LINE#         330
-  C:86FBH         LINE#         331
-  C:8700H         LINE#         333
-  C:8706H         LINE#         335
-  C:870FH         LINE#         336
-  C:8718H         LINE#         337
-  C:8722H         LINE#         338
-  C:872BH         LINE#         339
-  C:8734H         LINE#         340
+  C:86DFH         LINE#         322
+  C:86DFH         LINE#         323
+  C:86DFH         LINE#         324
+  C:86E5H         LINE#         325
+  C:86E9H         LINE#         327
+  C:86EEH         LINE#         328
+  C:86F2H         LINE#         330
+  C:86F8H         LINE#         331
+  C:86FEH         LINE#         332
+  C:8703H         LINE#         337
+  C:8709H         LINE#         338
+  C:870FH         LINE#         340
+  C:8715H         LINE#         342
+  C:871EH         LINE#         343
+  C:8727H         LINE#         344
+  C:8731H         LINE#         345
+  C:873AH         LINE#         346
+  C:8743H         LINE#         347
   -------         ENDPROC       GPIO_INIT
   -------         PROC          ENTER_SLEEP
   -------         DO            
   D:0024H         SYMBOL        d
   -------         ENDDO         
-  C:827CH         LINE#         345
-  C:827CH         LINE#         346
-  C:827CH         LINE#         347
-  C:8282H         LINE#         349
-  C:8289H         LINE#         350
-  C:8290H         LINE#         351
-  C:8297H         LINE#         353
-  C:829EH         LINE#         354
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 20
+  C:827CH         LINE#         352
+  C:827CH         LINE#         353
+  C:827CH         LINE#         354
+  C:8282H         LINE#         356
+  C:8289H         LINE#         357
+  C:8290H         LINE#         358
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 20
 
 
-  C:82A3H         LINE#         356
-  C:82A7H         LINE#         357
-  C:82ABH         LINE#         358
-  C:82B1H         LINE#         359
-  C:82B7H         LINE#         361
-  C:82BAH         LINE#         362
-  C:82BDH         LINE#         363
-  C:82C0H         LINE#         365
-  C:82F2H         LINE#         368
-  C:8313H         LINE#         370
-  C:831CH         LINE#         371
-  C:8325H         LINE#         372
-  C:832FH         LINE#         373
-  C:8338H         LINE#         374
-  C:8341H         LINE#         376
-  C:8344H         LINE#         377
-  C:8347H         LINE#         380
-  C:834EH         LINE#         381
-  C:834EH         LINE#         383
-  C:8351H         LINE#         384
-  C:8351H         LINE#         385
-  C:8358H         LINE#         386
-  C:835EH         LINE#         387
-  C:8367H         LINE#         388
-  C:8367H         LINE#         390
-  C:8373H         LINE#         391
-  C:837AH         LINE#         392
+  C:8297H         LINE#         360
+  C:829EH         LINE#         361
+  C:82A3H         LINE#         363
+  C:82A7H         LINE#         364
+  C:82ABH         LINE#         365
+  C:82B1H         LINE#         366
+  C:82B7H         LINE#         368
+  C:82BAH         LINE#         369
+  C:82BDH         LINE#         370
+  C:82C0H         LINE#         372
+  C:82F2H         LINE#         375
+  C:8313H         LINE#         377
+  C:831CH         LINE#         378
+  C:8325H         LINE#         379
+  C:832FH         LINE#         380
+  C:8338H         LINE#         381
+  C:8341H         LINE#         383
+  C:8344H         LINE#         384
+  C:8347H         LINE#         387
+  C:834EH         LINE#         388
+  C:834EH         LINE#         390
+  C:8351H         LINE#         391
+  C:8351H         LINE#         392
+  C:8358H         LINE#         393
+  C:835EH         LINE#         394
+  C:8367H         LINE#         395
+  C:8367H         LINE#         397
+  C:8373H         LINE#         398
+  C:837AH         LINE#         399
   -------         ENDPROC       ENTER_SLEEP
   -------         PROC          MAIN
-  C:890BH         LINE#         401
-  C:890BH         LINE#         402
-  C:890BH         LINE#         403
-  C:890EH         LINE#         404
-  C:8911H         LINE#         406
-  C:8914H         LINE#         407
-  C:8917H         LINE#         408
+  C:891AH         LINE#         408
   C:891AH         LINE#         409
-  C:8920H         LINE#         411
-  C:8923H         LINE#         413
+  C:891AH         LINE#         410
+  C:891DH         LINE#         411
+  C:8920H         LINE#         413
   C:8923H         LINE#         414
-  C:8923H         LINE#         415
-  C:8926H         LINE#         416
-  C:8937H         LINE#         417
-  C:893CH         LINE#         418
-  C:893FH         LINE#         420
-  C:8943H         LINE#         421
-  C:8943H         LINE#         423
-  C:8943H         LINE#         424
-  C:8943H         LINE#         427
-  C:8946H         LINE#         428
+  C:8926H         LINE#         415
+  C:8929H         LINE#         416
+  C:892FH         LINE#         418
+  C:8932H         LINE#         420
+  C:8932H         LINE#         421
+  C:8932H         LINE#         422
+  C:8935H         LINE#         423
+  C:8946H         LINE#         424
+  C:894BH         LINE#         425
+  C:894EH         LINE#         427
+  C:8952H         LINE#         428
+  C:8952H         LINE#         430
+  C:8952H         LINE#         431
+  C:8952H         LINE#         434
+  C:8955H         LINE#         435
   -------         ENDPROC       MAIN
   -------         ENDMOD        FOGIC_TXD
 
   -------         MODULE        ?C?CLDPTR
   C:837BH         PUBLIC        ?C?CLDPTR
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/06/2026  21:26:43  PAGE 21
+
+
   -------         ENDMOD        ?C?CLDPTR
-
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/24/2026  16:55:25  PAGE 21
-
 
   -------         MODULE        ?C?CLDOPTR
   C:8394H         PUBLIC        ?C?CLDOPTR
@@ -1246,5 +1248,5 @@ SYMBOL TABLE OF MODULE:  .\Release\Objects\Demo (?C_STARTUP)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_FOGIC_UART_TXSTRING?FOGIC_COM
 
-Program Size: data=78.0 xdata=0 code=3158
+Program Size: data=78.0 xdata=0 code=3173
 LINK/LOCATE RUN COMPLETE.  8 WARNING(S),  0 ERROR(S)

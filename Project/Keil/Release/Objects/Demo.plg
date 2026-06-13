@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\ÏîÄ¿\ÉÁÉÁÁÁÁÁ\¶ùÍ¯Ãæ¾ß\V3.0´øÒ£¿Ø\Ä§·¨°ô\³ÌÐò\Ò£¿ØÆ÷OK\FGB_V1.0¹²Ñô\Project\Keil\Project.uvproj
+Project File Date:  12/06/2024
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling system.c...
+compiling rf_operate.c...
+compiling rf_spi.c...
+compiling debug.c...
+compiling Fogic_COM.c...
+compiling Fogic_RxD.c...
+compiling Fogic_TxD.c...
+..\..\User\Fogic_TxD.c(393): warning C265: 'Enter_Sleep': recursive call to non-reentrant function
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RF_MODE_SWITCH?RF_OPERATE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RF_RECEIVE_PACK?RF_OPERATE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RF_SET_RATE?RF_OPERATE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RF_SET_CHN?RF_OPERATE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DEBUG_INIT?DEBUG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_USER_PRINTF?DEBUG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FOGIC_UART_INIT?FOGIC_COM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_FOGIC_UART_TXSTRING?FOGIC_COM
+Program Size: data=78.0 xdata=0 code=3173
+creating hex file from ".\Release\Objects\Demo"...
+".\Release\Objects\Demo" - 0 Error(s), 9 Warning(s).
